@@ -3,8 +3,8 @@
 // an Apple GPU is not verified). Before the app reads with WebGPU on a device, the synthetic images of
 // js/ocr/synthetic.js (same pixels on every device) are read on WebGPU and every result (each word's text and box)
 // must equal the stored WASM result below; any difference keeps that device on WASM for good (remembered in
-// localStorage). Off by default in the app since Task A5 (js/ocr/engine.js installDefaultEngine); localStorage
-// ldl.ocr.webgpu = 'auto' (bench.html) turns it on for a device.
+// localStorage). On by default in the app (Task A5: the GPU only recognises, checked on WASM; js/ocr/engine.js
+// installDefaultEngine); localStorage ldl.ocr.webgpu = 'off' (bench.html) turns it off for a device.
 import { syntheticImages, syntheticBitmap, plainResult } from './synthetic.js';
 
 /** Results of the synthetic set on the WASM / CPU runtime (onnxruntime-node 1.23.2; equal in Chromium and WebKit

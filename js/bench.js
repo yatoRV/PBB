@@ -2,7 +2,7 @@
 // (js/ocr/synthetic.js: drawn in code, same pixels on every device; no photo, no name, no sign-in, nothing sent).
 // Three ways are measured one after another, each started, used and stopped before the next (memory on iPhone):
 //   WASM on 2 Web Workers (the app's default on iPhone / iPad), WebGPU on 1 worker, 2 WASM workers + 1 WebGPU worker
-//   recognising (Task A5: the app's 'auto' mode, off by default; every GPU box of the sample set compared on WASM), WASM
+//   recognising (Task A5: the app's 'auto' mode, its default; every GPU box of the sample set compared on WASM), WASM
 //   on the main thread (as before Task A1; last, since its runtime cannot be unloaded).
 // For each: start-up time, the time of one synthetic sheet page and per text box, and whether every result equals the
 // stored WASM results (js/ocr/webgpu-check.js EXPECTED) and the WASM page. A short Vietnamese summary to screenshot.
@@ -125,16 +125,16 @@ function summary(d, results, ref) {
 /** The per-device switch, shown as soon as the page opens (Task A5; before, only after a measurement). passed: whether
  *  WebGPU gave the WASM results in this page's measurement (null: not measured yet). */
 function showSwitch(passed = null) {
-  // Task A5: WebGPU is off by default in the app again (WASM, the APK's results); this switch tries it on this device.
+  // Task A5: WebGPU helps recognise by default in the app (checked on WASM); this switch turns it off on this device.
   const s = store(); if (s == null) return; // no storage: no per-device switch (the app then uses the default)
-  let on = false; try { on = s.getItem(SWITCH_KEY) === 'auto'; } catch { /* no storage */ }
+  let on = true; try { on = s.getItem(SWITCH_KEY) !== 'off'; } catch { /* no storage */ }
   const verdict = savedVerdict(s);
   $('switch').hidden = false;
   $('switch-text').textContent = on
-    ? 'Đang bật thử trên máy này: trước khi đọc ảnh, app tự kiểm tra WebGPU bằng ảnh mẫu và chỉ dùng WebGPU khi kết quả giống hệt WASM' + (verdict ? ' (lần kiểm tra trước: ' + (verdict.verdict === 'pass' ? 'giống' : 'khác — app dùng WASM') + ')' : passed === false ? '; trên máy này WebGPU không có hoặc cho kết quả khác, nên app đọc bằng WASM' : '') + '. Ảnh thật vẫn có thể ra khác. Đóng hẳn app rồi mở lại để áp dụng.'
-    : 'Đang tắt (mặc định): app đọc bằng chip (WASM), kết quả giống hệt bản gốc. Đóng hẳn app rồi mở lại để áp dụng.';
-  const b = $('switch-button'); b.textContent = on ? 'Tắt WebGPU trong app' : 'Bật thử WebGPU trong app';
-  b.onclick = () => { try { if (on) s.removeItem(SWITCH_KEY); else s.setItem(SWITCH_KEY, 'auto'); } catch { /* no storage */ } showSwitch(passed); };
+    ? 'Đang bật (mặc định): chip dò chữ, GPU phụ đọc chữ; chữ GPU đọc sát ngưỡng thì chip đọc lại, cứ 25 ô có 1 ô được chip đối chiếu và chỉ cần khác 1 lần là GPU tự tắt trên máy này. Trước khi dùng, app tự kiểm tra WebGPU bằng ảnh mẫu' + (verdict ? ' (lần kiểm tra trước: ' + (verdict.verdict === 'pass' ? 'giống' : 'khác — app chỉ dùng chip') + ')' : passed === false ? '; trên máy này WebGPU không có hoặc cho kết quả khác, nên app chỉ dùng chip' : '') + '. Đóng hẳn app rồi mở lại để áp dụng.'
+    : 'Đã tắt trên máy này: app chỉ dùng chip (WASM), chậm hơn nhưng giống hệt bản gốc. Đóng hẳn app rồi mở lại để áp dụng.';
+  const b = $('switch-button'); b.textContent = on ? 'Tắt WebGPU trong app' : 'Bật lại WebGPU trong app';
+  b.onclick = () => { try { if (on) s.setItem(SWITCH_KEY, 'off'); else s.removeItem(SWITCH_KEY); } catch { /* no storage */ } showSwitch(passed); };
 }
 
 const device = await deviceInfo(); showDevice(device); showSwitch();

@@ -13,8 +13,9 @@ export function setOcrWorkers(n) { workers = n; }
  *  measurement only. */
 export function setOcrRecMemo(on) { recMemo = on !== false; }
 /** WebGPU for the PaddleOCR engines (read when an engine is created). 'off' (default): WASM. 'auto' (Task A3): one
- *  worker on WebGPU after this device passed the self-check of js/ocr/webgpu-check.js (else WASM, as 'off'); off by
- *  default in the app since Task A5 (installDefaultEngine): a device opts in on bench.html (ldl.ocr.webgpu = 'auto'). true / 'on': WebGPU where available,
+ *  worker on WebGPU after this device passed the self-check of js/ocr/webgpu-check.js (else WASM, as 'off'); since
+ *  Task A5 it only recognises, next to the WASM workers, and is the app's default (installDefaultEngine) unless a
+ *  device turned it off on bench.html (ldl.ocr.webgpu = 'off'). true / 'on': WebGPU where available,
  *  without the check (js/platform/onnx.js setWebGpu; measurement only). */
 export function setOcrWebGpu(mode) { webgpu = mode === true || mode === 'on' ? 'on' : mode === 'auto' ? 'auto' : 'off'; }
 /** A PaddleOCR engine: on a pool of Web Workers where the page can run one, else on this thread (Node, old browsers). */
@@ -130,15 +131,16 @@ export const MODEL_VERSIONS = Object.freeze({
   'tesseract-eng-vie': 'tesseract.js@7.0.0;eng+vie;psm3',
 });
 let installed = null;
-/** localStorage key of the per-device WebGPU switch (js/ocr/webgpu-check.js SWITCH_KEY): 'auto' turns it on. */
+/** localStorage key of the per-device WebGPU switch (js/ocr/webgpu-check.js SWITCH_KEY): 'off' turns it off. */
 const GPU_SWITCH = 'ldl.ocr.webgpu';
 /** Installs the default engine for every TextRecognizer client of the page; inside a reading job its calls are
  *  checkpointed (js/ocr/checkpoint.js: a restarted job gets the calls it already made back at once). */
 export function installDefaultEngine(name = DEFAULT_ENGINE) {
-  // Task A5: WASM by default again. With WebGPU on (Task A4) the OPPO Find X7 read the same pipe photos with one cell
-  // different twice (a detection split "9HC" into "9" and "9HC", so a duty HC was lost); a device opts in on
-  // bench.html (ldl.ocr.webgpu = 'auto'), which still runs the self-check first.
-  let gpu = 'off'; try { if (globalThis.localStorage?.getItem(GPU_SWITCH) === 'auto') gpu = 'auto'; } catch { /* no storage: default */ }
+  // Task A5: WebGPU only helps recognise (the WASM workers detect; close calls and a sample checked on WASM) and is on
+  // by default: the OPPO Find X7 read 3 pipe photos in 6:58 (WASM alone 8:57) with every result equal to WASM, where
+  // the A4 GPU-only worker had lost a duty HC. It still runs the self-check first; a device turns it off on
+  // bench.html (ldl.ocr.webgpu = 'off').
+  let gpu = 'auto'; try { if (globalThis.localStorage?.getItem(GPU_SWITCH) === 'off') gpu = 'off'; } catch { /* no storage: default */ }
   setOcrWebGpu(gpu);
   // WebGPU results may differ from WASM (Task A4: on a Mali GPU): checkpoints written with WebGPU possible are kept
   // apart from WASM-only ones, so a resumed read does not mix the two settings.

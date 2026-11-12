@@ -25,8 +25,8 @@ DEPLOY.md
 
 `bench.html` (cùng `css/bench.css`, `js/bench.js` đã có trong `css/`, `js/`): trang đo tốc độ đọc ảnh trên máy người
 xem, chỉ dùng ảnh mẫu vẽ sẵn, không đăng nhập — https://yatorv.github.io/PBB/bench.html (Task A3, `docs/PERF.md`).
-Từ Task A5, app đọc bằng chip (WASM) mặc định; trang này có nút "Bật thử WebGPU trong app" cho máy đang xem (GPU chỉ
-phụ đọc chữ, có kiểm tra bằng chip) và dòng đo "WASM 2 worker + WebGPU đọc chữ" cho biết GPU của máy lệch bao nhiêu.
+Từ Task A5, app mặc định cho chip (WASM) dò chữ và GPU (WebGPU) phụ đọc chữ, có kiểm tra bằng chip; trang này có nút
+"Tắt WebGPU trong app" cho máy đang xem và dòng đo "WASM 2 worker + WebGPU đọc chữ" cho biết GPU của máy lệch bao nhiêu.
 
 ## Không bắt buộc (chỉ dành cho người lập trình; trang web không dùng)
 
