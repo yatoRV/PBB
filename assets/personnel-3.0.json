@@ -1,0 +1,486 @@
+{
+ "version": 2,
+ "updated": "2026-10-29",
+ "source": "77 họ tên đầy đủ do người dùng xác nhận; đính chính Nguyễn Huỳnh Minh và Trần Quang Cường. STT cũ chỉ là gợi ý, không phải số cố định trên mọi lịch.",
+ "people": [
+  {
+   "workStt": 1,
+   "name": "Chu Văn Chinh",
+   "aliases": []
+  },
+  {
+   "workStt": 2,
+   "name": "Nguyễn Ngọc Hưng",
+   "aliases": [
+    "Nguyễn Ng Hưng"
+   ]
+  },
+  {
+   "workStt": 3,
+   "name": "Phan Nghĩa Bình",
+   "aliases": []
+  },
+  {
+   "workStt": 4,
+   "name": "Hồ Như Tâm",
+   "aliases": []
+  },
+  {
+   "workStt": 35,
+   "name": "Phạm Quang Hải",
+   "aliases": []
+  },
+  {
+   "workStt": 20,
+   "name": "Tô Hoài",
+   "aliases": []
+  },
+  {
+   "workStt": 27,
+   "name": "Nguyễn Hữu Độ",
+   "aliases": []
+  },
+  {
+   "workStt": 14,
+   "name": "Mai Đình Nguyên",
+   "aliases": [
+    "Mai Đ Nguyên",
+    "M. Đ. Nguyên"
+   ]
+  },
+  {
+   "workStt": 9,
+   "name": "Nguyễn Anh Khoa",
+   "aliases": [
+    "Nguyễn A Khoa",
+    "Ng. Anh Khoa"
+   ]
+  },
+  {
+   "workStt": 7,
+   "name": "Nguyễn Đoàn Sinh Nhật",
+   "aliases": [
+    "Nguyễn Đ S Nhật",
+    "N. Đ.S. Nhật"
+   ]
+  },
+  {
+   "workStt": 12,
+   "name": "Lê Văn Duy",
+   "aliases": []
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Nguyễn Văn Sao"
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Hà P H Thọ"
+   ],
+   "name": "Hà Phạm Hoàng Thọ"
+  },
+  {
+   "workStt": 10,
+   "name": "Phạm Bình Sáng",
+   "aliases": [
+    "P. Bình Sáng"
+   ]
+  },
+  {
+   "workStt": 30,
+   "name": "Nguyễn Hồ Tấn Phương",
+   "aliases": [
+    "Ng H T Phương",
+    "Ng. Hồ Tấn Phương"
+   ]
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Nguyễn Minh Trung"
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Nguyễn Sỹ Quý"
+  },
+  {
+   "workStt": 5,
+   "name": "Trần Thế Vinh",
+   "aliases": []
+  },
+  {
+   "workStt": 24,
+   "name": "Lê Hữu Tài",
+   "aliases": []
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Nguyễn H Hùng"
+   ],
+   "name": "Nguyễn Hữu Hùng"
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Nguyễn B Cường"
+   ],
+   "name": "Nguyễn Bá Cường"
+  },
+  {
+   "workStt": 6,
+   "name": "Huỳnh Khánh Toàn",
+   "aliases": [
+    "Huỳnh Kh Toàn",
+    "H. K. Toàn"
+   ]
+  },
+  {
+   "workStt": 42,
+   "name": "Châu Minh Uy",
+   "aliases": []
+  },
+  {
+   "workStt": 23,
+   "name": "Nguyễn Thành Luân",
+   "aliases": [
+    "Nguyễn T Luân"
+   ]
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Đặng Q Hùng"
+   ],
+   "name": "Đặng Quốc Hùng"
+  },
+  {
+   "workStt": 38,
+   "name": "Nguyễn Huỳnh Minh",
+   "aliases": [
+    "Nguyễn H Minh",
+    "N.H.Minh"
+   ]
+  },
+  {
+   "workStt": 29,
+   "name": "Giản Tư Thìn",
+   "aliases": []
+  },
+  {
+   "workStt": 39,
+   "name": "Lai Thiên Tân",
+   "aliases": []
+  },
+  {
+   "workStt": 45,
+   "name": "Trần Quang Cường",
+   "aliases": [
+    "Trần Q Cường"
+   ]
+  },
+  {
+   "workStt": 13,
+   "name": "Vũ Văn Thanh",
+   "aliases": []
+  },
+  {
+   "workStt": 40,
+   "name": "Vũ Công Hiển",
+   "aliases": []
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Trần Văn Tuất"
+  },
+  {
+   "workStt": 15,
+   "name": "Trần Công Sang",
+   "aliases": [
+    "T. Công Sang"
+   ]
+  },
+  {
+   "workStt": 36,
+   "name": "Phạm Đức Huy",
+   "aliases": []
+  },
+  {
+   "workStt": 41,
+   "name": "Đỗ Thành Dũng",
+   "aliases": []
+  },
+  {
+   "workStt": 22,
+   "name": "Ngô Văn Tuyền",
+   "aliases": []
+  },
+  {
+   "workStt": 43,
+   "name": "Vũ Thành Trung",
+   "aliases": []
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Huỳnh C Phước"
+   ],
+   "name": "Huỳnh Công Phước"
+  },
+  {
+   "workStt": 37,
+   "name": "Nguyễn Đức Hồng",
+   "aliases": [
+    "Nguyễn Đ Hồng"
+   ]
+  },
+  {
+   "workStt": 8,
+   "name": "Phạm Trung Nguyên",
+   "aliases": [
+    "Phạm T Nguyên",
+    "P. T. Nguyên"
+   ]
+  },
+  {
+   "workStt": 26,
+   "name": "Nguyễn Công Dương",
+   "aliases": [
+    "Nguyễn C Dương"
+   ]
+  },
+  {
+   "workStt": 28,
+   "name": "Nguyễn Quang Chính",
+   "aliases": [
+    "Nguyễn Q Chính"
+   ]
+  },
+  {
+   "workStt": 21,
+   "name": "Mai Quý Luật",
+   "aliases": [
+    "Mai Qúy Luật"
+   ]
+  },
+  {
+   "workStt": 44,
+   "name": "Chu Anh Dũng",
+   "aliases": []
+  },
+  {
+   "workStt": 25,
+   "name": "Lưu Trung Nghĩa",
+   "aliases": [
+    "Lưu Tr Nghĩa"
+   ]
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Vũ Tú Nam"
+  },
+  {
+   "workStt": 11,
+   "name": "Trần Hữu Phát",
+   "aliases": [
+    "T. Hữu Phát"
+   ]
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Nguyễn M Tiến"
+   ],
+   "name": "Nguyễn Mạnh Tiến"
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Trần Anh Tuấn"
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Huỳnh V Cường"
+   ],
+   "name": "Huỳnh Việt Cường"
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Đinh NH Long"
+   ],
+   "name": "Đinh Ngọc Hải Long"
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Hoàng N Tân"
+   ],
+   "name": "Hoàng Nhật Tân"
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Bùi ĐM Đức"
+   ],
+   "name": "Bùi Doãn Minh Đức"
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Nguyễn T Tâm"
+   ],
+   "name": "Nguyễn Thành Tâm"
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Nguyễn Ph Đạt"
+   ],
+   "name": "Nguyễn Phú Đạt"
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Trần Hoàng Phúc"
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Ng Nam Sang"
+   ],
+   "name": "Nguyễn Nam Sang"
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Phạm H Linh"
+   ],
+   "name": "Phạm Hoàng Linh"
+  },
+  {
+   "workStt": 61,
+   "name": "Nguyễn Anh Dũng",
+   "aliases": []
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Đỗ Anh Dũng"
+  },
+  {
+   "workStt": 55,
+   "name": "Nguyễn Trung Tuyến",
+   "aliases": [
+    "Nguyễn Tr Tuyến",
+    "NG. Trung Tuyến"
+   ]
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Ngô Ngọc Giang"
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Lê Trung Hiếu"
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Lưu Duy Thanh"
+  },
+  {
+   "workStt": 31,
+   "name": "Đỗ Phạm Tiểu Đình",
+   "aliases": [
+    "Đỗ Ph Tiểu Đình"
+   ]
+  },
+  {
+   "workStt": 46,
+   "name": "Nguyễn Kế Uẩn",
+   "aliases": []
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Đàm Mạnh Lưu"
+  },
+  {
+   "workStt": 49,
+   "name": "Trần Văn Công",
+   "aliases": []
+  },
+  {
+   "workStt": 0,
+   "aliases": [
+    "Ng T Giang"
+   ],
+   "name": "Nguyễn Trường Giang"
+  },
+  {
+   "workStt": 32,
+   "name": "Nguyễn Kiều Minh Huy",
+   "aliases": [
+    "Ng K M Huy",
+    "Minh Huy"
+   ]
+  },
+  {
+   "workStt": 51,
+   "name": "Nguyễn Lương Minh Khang",
+   "aliases": [
+    "Ng L M Khang",
+    "Nguyễn LM Khang"
+   ]
+  },
+  {
+   "workStt": 17,
+   "name": "Lê Trung Kiên",
+   "aliases": []
+  },
+  {
+   "workStt": 34,
+   "name": "Phan Văn Hoàng Lộc",
+   "aliases": [
+    "Phan V H Lộc",
+    "Phan V. H Lộc"
+   ]
+  },
+  {
+   "workStt": 0,
+   "aliases": [],
+   "name": "Võ Gia Nghi"
+  },
+  {
+   "workStt": 18,
+   "name": "Nguyễn Hải Ngọc",
+   "aliases": [
+    "Ng. Hải Ngọc",
+    "Hai Ngoc"
+   ]
+  },
+  {
+   "workStt": 48,
+   "name": "Trương Tiến Thịnh",
+   "aliases": [
+    "Trương T Thịnh"
+   ]
+  },
+  {
+   "workStt": 19,
+   "name": "Nguyễn Trí Thức",
+   "aliases": [
+    "Ng. Thí Thức"
+   ]
+  }
+ ]
+}

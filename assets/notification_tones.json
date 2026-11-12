@@ -1,0 +1,1810 @@
+[
+  {
+    "group": "aosp",
+    "name": "Adara",
+    "resource": "tone_aosp_adara_b2ad37",
+    "sha256": "30737121caac6b270d4171b07e3b3e67de069110b709a45257eaacc044711a67",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Adara.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Aldebaran",
+    "resource": "tone_aosp_aldebaran_d9c5df",
+    "sha256": "ba01cdd57c1697cc7dddc66f311b574c5fc323564c7967cc311e67aa05125f27",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Aldebaran.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Altair",
+    "resource": "tone_aosp_altair_04c0fe",
+    "sha256": "d21cc921f4d9d4c2cce15baa04336d0c029d6769d3ae0ba17be1e9c698b95483",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Altair.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Alya",
+    "resource": "tone_aosp_alya_d9cb8c",
+    "sha256": "dd52bb01f43cdbc234c999566b273109e3d71c76cd1611ccc4c500c853223730",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Alya.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Antares",
+    "resource": "tone_aosp_antares_455fdb",
+    "sha256": "9d0d53869e0eb39522139527a77fdb5d8ae514cead4050cc89d1bbfc8766d869",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Antares.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Antimony",
+    "resource": "tone_aosp_antimony_66b136",
+    "sha256": "c46b9b4b9a137cc3df2c64add20ced90dc170c2c126f7d345222966f53918dbf",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Antimony.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "arcturus",
+    "resource": "tone_aosp_arcturus_6021cf",
+    "sha256": "6487240c9d6dffe7c569ca12079d2c8d41a28af50b30d471eae9a3e2e377fa96",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/arcturus.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Arcturus",
+    "resource": "tone_aosp_arcturus_8d77a8",
+    "sha256": "2492fa4d4e84afff3c9a6ad378ba12b43e3018c7ae7d04ac12f15e005361e4c4",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Arcturus.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Argon",
+    "resource": "tone_aosp_argon_3be39c",
+    "sha256": "47bb926e772d542c722128192b3d17b75ff36795c48e771591f115b59584349d",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Argon.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Beat Box Android",
+    "resource": "tone_aosp_beat_box_android_3342d4",
+    "sha256": "f9afd021c8ad09a96057cd01d3eca035a545e259c3efd1dd3844b7b08bc16825",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Beat_Box_Android.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Bellatrix",
+    "resource": "tone_aosp_bellatrix_8be666",
+    "sha256": "01e09155183566e0cb3895314b7079b182a4d03b21a6326652a9ca399fa8ea5f",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Bellatrix.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Beryllium",
+    "resource": "tone_aosp_beryllium_dbe190",
+    "sha256": "2bfa1116f4c60be3d994ec28a7889a237b4665d5a6912425f57b4990085186fd",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Beryllium.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Betelgeuse",
+    "resource": "tone_aosp_betelgeuse_9da267",
+    "sha256": "65c97a0863f750a4635d05f5efcafb46a62e117cefa8b3355d1e84446342f459",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Betelgeuse.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "CaffeineSnake",
+    "resource": "tone_aosp_caffeinesnake_2624a3",
+    "sha256": "4f5d49eaccad999a00eaa18a50eb12d6ea78a5bb79b4b583ece1e1f8321e106b",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/newwavelabs/CaffeineSnake.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Canopus",
+    "resource": "tone_aosp_canopus_a9be85",
+    "sha256": "e9bc96e421760f418f5ec621c1dfe3b93b2af70f027a8395f83066bec08119ce",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Canopus.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Capella",
+    "resource": "tone_aosp_capella_7ed7cd",
+    "sha256": "cf23a4477c741dcea8aa893139c6aaa889a9c565bcb73bb584f1e0a3adc78b43",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Capella.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Castor",
+    "resource": "tone_aosp_castor_78af9b",
+    "sha256": "03ae0f9e2c9bf654753ae37cd5888b172549d8d746c93e9566902566fbfeaa1a",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Castor.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "CetiAlpha",
+    "resource": "tone_aosp_cetialpha_7f7dbb",
+    "sha256": "4ca3ec88140119670c04420cd2ee247f7cd759108b4b15ce0fa435846cfb7a1b",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/CetiAlpha.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Cobalt",
+    "resource": "tone_aosp_cobalt_3a1df9",
+    "sha256": "ea34cf29cc2682605095a42cafbe93749b89d76d6d92d1bd1930a8d7c2a868e8",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Cobalt.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Cricket",
+    "resource": "tone_aosp_cricket_e57d78",
+    "sha256": "7d0899e94608d3f2e617c7f1d740d4b69bb74ce9f4132bf68912812103e38792",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Cricket.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "DearDeer",
+    "resource": "tone_aosp_deardeer_42ed50",
+    "sha256": "d1f2cd11a28fca13213b7a7941e571892b3658467a3089109832baf4ecdd5362",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/newwavelabs/DearDeer.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Deneb",
+    "resource": "tone_aosp_deneb_a608e7",
+    "sha256": "f055c900cdf3371348f62ec07dd93580b4cc166114152641af47dba3bba2fa62",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Deneb.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Doink",
+    "resource": "tone_aosp_doink_94261d",
+    "sha256": "4e83fe49713fed86abd2d101ddca7d75a903d06a9a1b56dc7d183110ab0596c0",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Doink.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "DontPanic",
+    "resource": "tone_aosp_dontpanic_734102",
+    "sha256": "0ce881ba6f4f56729436e1345d1819b359b3767bb384df38feb7a7464429a9df",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/newwavelabs/DontPanic.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Drip",
+    "resource": "tone_aosp_drip_68169a",
+    "sha256": "5affe5f8dc5ad73bb9e8dee781dbdbbaf2e41521d4c2dfd754027a60e60de5f4",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Drip.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Electra",
+    "resource": "tone_aosp_electra_90ad52",
+    "sha256": "2d5d643cafaae599a19bcb9884ba55759cec9b4d2e764cc4c61c6b7f6f394a93",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Electra.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "F1 MissedCall",
+    "resource": "tone_aosp_f1_missedcall_e08128",
+    "sha256": "9004ff6b4f2027492a9f311e18b07d8543e5bbd886d528e3d6ade256ea3cd5d7",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/F1_MissedCall.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "F1 New MMS",
+    "resource": "tone_aosp_f1_new_mms_ccf1c4",
+    "sha256": "746a5a246257e542445e38e1a8912a56a35b1dcfa5eb5e91b26b0ea0cdff0d71",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/F1_New_MMS.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "F1 New SMS",
+    "resource": "tone_aosp_f1_new_sms_02b0c7",
+    "sha256": "a7e960d3318295d877485e60fecf25841a28f3912797cfddd12a3b8449211d29",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/F1_New_SMS.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Fluorine",
+    "resource": "tone_aosp_fluorine_8eb9af",
+    "sha256": "6a61648024b70e7454c8e84aeddabdbddb8b31d92e1d92fbb72a9299b3afd99e",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Fluorine.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Fomalhaut",
+    "resource": "tone_aosp_fomalhaut_596a7a",
+    "sha256": "9868f9da37240e99420a793fb536642c967172119b1407af8361f738a7ba5695",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Fomalhaut.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Gallium",
+    "resource": "tone_aosp_gallium_a2c9fa",
+    "sha256": "83c3ad7a13b67ede1b22dce837571be855050a7588b0d6e567fdb8fa27b229bd",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Gallium.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Heaven",
+    "resource": "tone_aosp_heaven_ec2ef9",
+    "sha256": "aba59ee256c2f319b406bd93c7b87ebe27efab87c3b5511570c24c7d79e2102a",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Heaven.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Helium",
+    "resource": "tone_aosp_helium_ff9086",
+    "sha256": "23f06fd760043cad93d5e2fba839e41744b65ab24d1f726c2015859909dd62fb",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Helium.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Highwire",
+    "resource": "tone_aosp_highwire_15198c",
+    "sha256": "dc283d99ec002a10e1eb757ca6034a7b1087be5e5790472546fea9e16555ac5c",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/newwavelabs/Highwire.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Hojus",
+    "resource": "tone_aosp_hojus_d722ce",
+    "sha256": "5a7e7ef6f1fa06ac126ca557321095ac4a4296d697a622f9da409ffc1f4651e1",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Hojus.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Iridium",
+    "resource": "tone_aosp_iridium_9992d2",
+    "sha256": "e2bd12d8083f6de999a1642f09dd7042631819af025e975be4f2878881cc3db8",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Iridium.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Krypton",
+    "resource": "tone_aosp_krypton_3497f4",
+    "sha256": "d3d7defda92a4470dc1118d1ed82f1bb3c6d3d6843c49f81171ace0d3429d64c",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Krypton.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "KzurbSonar",
+    "resource": "tone_aosp_kzurbsonar_8e5f32",
+    "sha256": "3cd58c925644d7681be3215ecac5e13b4a5f242a70d15b593d9dcc21872a6b6d",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/newwavelabs/KzurbSonar.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Lalande",
+    "resource": "tone_aosp_lalande_b1cd64",
+    "sha256": "62a173b57d06bc614d92a97b7e178127f12caf8b28266764cec046394d459e0e",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Lalande.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Merope",
+    "resource": "tone_aosp_merope_2c2e43",
+    "sha256": "01740368196a0aa97c94059f00c7fbc7774c01e26ad1e04b0327e0e8d3f790a9",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Merope.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Mira",
+    "resource": "tone_aosp_mira_504a25",
+    "sha256": "b5e8afb097a0e042aae8a5eb790e76abcb20f6c63d5b812c0fa34e61d2526f7d",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Mira.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "moonbeam",
+    "resource": "tone_aosp_moonbeam_6a0815",
+    "sha256": "9067df8132abcd13a955c9499f3389cdbe83061ed8eb0b43916eb0fc4575d2bd",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/moonbeam.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "OnTheHunt",
+    "resource": "tone_aosp_onthehunt_1853c8",
+    "sha256": "c7b0146f763cc07cd8f9e2a4f38313f568b668b339d93bab3059107e877fe74d",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/newwavelabs/OnTheHunt.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Palladium",
+    "resource": "tone_aosp_palladium_f21596",
+    "sha256": "1322dd5c79e24cbf39016124ba7b6fa97ae1eaa84f658d5c9fe98447f0fa4536",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Palladium.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "pixiedust",
+    "resource": "tone_aosp_pixiedust_784c82",
+    "sha256": "e325e573e3e5d66c4ea3b6b33dcc5fbde30d849632aadf958cec0e5662f025dd",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/pixiedust.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "pizzicato",
+    "resource": "tone_aosp_pizzicato_826e88",
+    "sha256": "e690c4f349245b6d259a72aaf12bda88a22d15fde3eda7136658269ccb64f1b8",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/pizzicato.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Plastic Pipe",
+    "resource": "tone_aosp_plastic_pipe_ef90bd",
+    "sha256": "7c63e3a7ca3b9a02a8bb5d4f5f19406ff1b7c0ba18394942d231b21b0f06e501",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Plastic_Pipe.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Polaris",
+    "resource": "tone_aosp_polaris_03bfa4",
+    "sha256": "71f480cb5bba71e2759141742a7cecdd520daa3193b4002620b23b742c3c3996",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Polaris.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Pollux",
+    "resource": "tone_aosp_pollux_560946",
+    "sha256": "4b69fb7a37a651979e586e9bb2bdc2b93f3df5dac59a75214586caf768633385",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Pollux.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Procyon",
+    "resource": "tone_aosp_procyon_669ebd",
+    "sha256": "175158547964b18c737051c367fe4f73479d8c10c787aedd349af87dd3324e61",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Procyon.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Proxima",
+    "resource": "tone_aosp_proxima_474a55",
+    "sha256": "870000a0a2d302797f63f683dbc718a8a165013e055b78f5c44769cac1200efb",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Proxima.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Radon",
+    "resource": "tone_aosp_radon_b0eead",
+    "sha256": "9c5339af6394eb376f6a0dac164b867f4c1d4a0d6bf6513c2795166b661b7ab4",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Radon.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "regulus",
+    "resource": "tone_aosp_regulus_2fa12f",
+    "sha256": "d42cb12cace5ed3822046d13c123782671f254044660e9c45c149b1fafac72da",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/regulus.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Rubidium",
+    "resource": "tone_aosp_rubidium_8d1583",
+    "sha256": "a4a45fde2b066da3d54bba960ec398843a5134e8e6887fcd075d9e155ef377a3",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Rubidium.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Selenium",
+    "resource": "tone_aosp_selenium_93f49f",
+    "sha256": "c21b3a9c7880c9bb939b3fc680fc4e5aa0ee08457f4b09e99416c126963ba6f0",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Selenium.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Shaula",
+    "resource": "tone_aosp_shaula_083137",
+    "sha256": "c30573e22eb3975cb73fc288d87bacc7a07181d3e4a24252ea0262bffe2ddd3d",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Shaula.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "sirius",
+    "resource": "tone_aosp_sirius_40d7fa",
+    "sha256": "1942caa9abf0372207e6ba74be9262d0f58c8d52ee46a5f51645a3a2642703e6",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/sirius.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Sirrah",
+    "resource": "tone_aosp_sirrah_b66b00",
+    "sha256": "3f59be04cf357dda99d105e5d1b89c8fc67421268ee05f67fdf3f772bb085de9",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Sirrah.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "SpaceSeed",
+    "resource": "tone_aosp_spaceseed_010f43",
+    "sha256": "e70f2a4bf8e43f7c95ee3919dc5230242fe06adb863f8f24b118244180a6dd7e",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/SpaceSeed.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Spica",
+    "resource": "tone_aosp_spica_ff2f04",
+    "sha256": "fa2565937b82c9fc0f27f56e282821a0430b2ca033bb30323d23e3182867feaf",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Spica.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Strontium",
+    "resource": "tone_aosp_strontium_2b9863",
+    "sha256": "d344a0d2b0b62d02af212bf4cdb5acc3adbe04ee8c0e7b4fb251ad2a45d45bed",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Strontium.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Syrma",
+    "resource": "tone_aosp_syrma_167f5b",
+    "sha256": "25bff53e69313cf8ae8483aeefd0b5fdb45b176637fb93798ca09c9c3260d602",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Syrma.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "TaDa",
+    "resource": "tone_aosp_tada_d9f25b",
+    "sha256": "7a1f1c421ec66639bffaed9c9ff14a8488cfff74237e31097fc64790ed6b5c57",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/TaDa.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Talitha",
+    "resource": "tone_aosp_talitha_f9e401",
+    "sha256": "7e7b888e93d1af2a87649935baa1716026e8b6e13b6fae4216ea422d35f086be",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Talitha.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Tejat",
+    "resource": "tone_aosp_tejat_21701e",
+    "sha256": "e21a04b2b4ab80f43adec00c9171f9d47d2aa4089105aa2a74cdca93b9378d5a",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Tejat.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Thallium",
+    "resource": "tone_aosp_thallium_ccfa90",
+    "sha256": "f2bb3ac83cdd6156727dd8ee27c666bbf74725e53a4f270d2491f2336fb0e108",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Thallium.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Tinkerbell",
+    "resource": "tone_aosp_tinkerbell_5e4e86",
+    "sha256": "11eb6d426576bea2c532d8b40eb69183bff168db494d116399b3d8104e7b98cc",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/Tinkerbell.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "tweeters",
+    "resource": "tone_aosp_tweeters_79295f",
+    "sha256": "3744eae5efad2d3b9a841fb5ee5dbaef66e935384ba0b03fa179e694e9e8735b",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/tweeters.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Upsilon",
+    "resource": "tone_aosp_upsilon_15f2be",
+    "sha256": "bccb68b3eccaaf13914ac89764b734499e9807ad021e36c80252b872a9292ef2",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Upsilon.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Vega",
+    "resource": "tone_aosp_vega_63e7da",
+    "sha256": "91c041ca4c138a737db9001fea803824bd9ba03bdd6669f9d287e9151402451a",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Vega.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "vega",
+    "resource": "tone_aosp_vega_82193e",
+    "sha256": "eb098eac0e8d4c734c4f720ff253368e640be85c6319bd3bc85ca1abd7534d73",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/vega.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Voila",
+    "resource": "tone_aosp_voila_82b172",
+    "sha256": "88c41d33d328ac8f1bd33112e8b0cf5f5fb6d9ef4d5f280ecb1395bcb0689cad",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/newwavelabs/Voila.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Xenon",
+    "resource": "tone_aosp_xenon_b96b5f",
+    "sha256": "b821e8a95ff80b66f554f5e9acce3e3c60ddac48d695326d753592dd5b798dca",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Xenon.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "aosp",
+    "name": "Zirconium",
+    "resource": "tone_aosp_zirconium_689e02",
+    "sha256": "e6f444d1cc9763a361b9298c66226e630f41ddc33c6b6895dbfee735aa210bc6",
+    "source": "https://android.googlesource.com/platform/frameworks/base/+/1cdfff555f4a21f71ccc978290e2e212e2f8b168/data/sounds/notifications/ogg/Zirconium.ogg",
+    "license": "Apache-2.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "back_001",
+    "resource": "tone_kenney_interface_back_001_8186b9",
+    "sha256": "07db973f79f6ae0f2edc34561e7592e24d0577455919fb602cb8ecc0da991dcf",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "back_002",
+    "resource": "tone_kenney_interface_back_002_142310",
+    "sha256": "61581c58194e3f19f531072edabbc344204c7e0a2887b8ededce4357bcf09195",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "back_003",
+    "resource": "tone_kenney_interface_back_003_854970",
+    "sha256": "ff5e87de1230b1a5f1fa83e5a4ba9d7eb1c07154267ac34b510a17d4caa03cef",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "back_004",
+    "resource": "tone_kenney_interface_back_004_30b081",
+    "sha256": "c22e3c49f42c2a5ba6748e91283efe124f32822469c1258c3e5d7b3d7ab9361c",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "bong_001",
+    "resource": "tone_kenney_interface_bong_001_6d66d7",
+    "sha256": "d21d0f0b782445db579d11e2506b24cd1ac9d664ee33aeaf807761aa7b6fd710",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "click_001",
+    "resource": "tone_kenney_interface_click_001_55710b",
+    "sha256": "ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "click_002",
+    "resource": "tone_kenney_interface_click_002_f937ee",
+    "sha256": "adcd1f4adc35f1b41bc1b5bbefeff7aa44f2f3f0d96d3199b544140c7c1e761c",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "click_003",
+    "resource": "tone_kenney_interface_click_003_357275",
+    "sha256": "2fa929138bc3a0f432696588f66eac94b8f6d463905ec8808c6461ce4b054292",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "click_004",
+    "resource": "tone_kenney_interface_click_004_013d9d",
+    "sha256": "09e2c1b643b71b9aff9932b4e02d78db116446b9a14b00a5b2a9b28d2668fd8e",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "click_005",
+    "resource": "tone_kenney_interface_click_005_3b5d4f",
+    "sha256": "a3ee7ebb036bc3cdc218ae52bb27548c4f49bcf07505274f8b61b1af8236acc2",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "close_001",
+    "resource": "tone_kenney_interface_close_001_b7188a",
+    "sha256": "44af8249b933e0fd35ec957a638bb1a0b01f85b53fbe9674bf77bd3ca3168ef4",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "close_002",
+    "resource": "tone_kenney_interface_close_002_8e37c9",
+    "sha256": "bc4279d2bb2bf86592473eab6a8eab55e51b54a8619315000dbd780a83b102d8",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "close_003",
+    "resource": "tone_kenney_interface_close_003_8a3465",
+    "sha256": "39a1a7f3bc001766c1881841e9903c6b16f5a10b5666e0791d7f6444677d8b05",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "close_004",
+    "resource": "tone_kenney_interface_close_004_7285a2",
+    "sha256": "41b41e01ac75f4bc5a9c8dc3b0de744fa7f877757463692783c12a8ae4bfae6b",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "confirmation_001",
+    "resource": "tone_kenney_interface_confirmation_001_689c59",
+    "sha256": "063564703b6094d70718a3e787a55cc9141611e4ecd6b6637f8828f79b4a8c3a",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "confirmation_002",
+    "resource": "tone_kenney_interface_confirmation_002_a96571",
+    "sha256": "33b17a9a9a2397c62b285c52c33a907fdffb476909c99e42dde603f6a7a8b12c",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "confirmation_003",
+    "resource": "tone_kenney_interface_confirmation_003_07876d",
+    "sha256": "3091bf0be0497f825769ee0733ca7bdc3bcd59bd6c6e8f2ba8f93d580ff38022",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "confirmation_004",
+    "resource": "tone_kenney_interface_confirmation_004_f160a4",
+    "sha256": "568967a3d9f8a8f6af54ea01729c4882284308f2a27d78c07ffd7ee0d6951661",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "drop_001",
+    "resource": "tone_kenney_interface_drop_001_d6e278",
+    "sha256": "692ee3a6f1821402ca649ff735bee9591dc4846c8098fc7d6a90fd15fa57c1af",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "drop_002",
+    "resource": "tone_kenney_interface_drop_002_f1a6fd",
+    "sha256": "4ac4d1cef7e936965cbf795852ca2020300b9e2ba7daa59f2bf4f1f7bf416218",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "drop_003",
+    "resource": "tone_kenney_interface_drop_003_2eee36",
+    "sha256": "43d086d50f90493a98cd2e09aa6dbf150d164f1578e1ec768d21cb185571ad87",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "drop_004",
+    "resource": "tone_kenney_interface_drop_004_619228",
+    "sha256": "10738707f9300f9b963ceba46d5da2ed4a221faf7d39484a643c2d3bc151c5f2",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "error_001",
+    "resource": "tone_kenney_interface_error_001_df85b4",
+    "sha256": "46e67425d16339772e8d328fb36a49426c9467418686e11beeb71ff84b0f6433",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "error_002",
+    "resource": "tone_kenney_interface_error_002_3d9461",
+    "sha256": "76810ec365f41078fd0507101da5bb7b8730fe011dde43908329fdabd8575e79",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "error_003",
+    "resource": "tone_kenney_interface_error_003_801ae0",
+    "sha256": "885b28175c7b511118bcffab95675b48bbac9005cf6514656ebdad979276b3ab",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "error_004",
+    "resource": "tone_kenney_interface_error_004_d2f3dd",
+    "sha256": "0b574cea597d96507e782ae9764f88482ce49f46e931e57054bf7150047f2d69",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "error_005",
+    "resource": "tone_kenney_interface_error_005_edc866",
+    "sha256": "3f75b11df5b06d68d2c25fbf0e9c9d9e7dd9250562a4007ee34856b8a309a2ae",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "error_006",
+    "resource": "tone_kenney_interface_error_006_ddfdd4",
+    "sha256": "a97513d7fd2b12b1210c423be943b4c1ab0e899b11db95855e9b74836e646ae0",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "error_007",
+    "resource": "tone_kenney_interface_error_007_aa62d7",
+    "sha256": "f1ee4c1ac8bfe1a82eacb54b26f49e8974bab93bcf10c01800bc10dbf730f559",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "error_008",
+    "resource": "tone_kenney_interface_error_008_62d84d",
+    "sha256": "eba17ecb2a426bfd4a8a6acff5f8a86202b6424a77af0fd842e37809a1ab6d81",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "glass_001",
+    "resource": "tone_kenney_interface_glass_001_d8a159",
+    "sha256": "183eebee20eb0a532b0b85104d139cbf2673eb66d95c3cc733ac9ea98362e7e8",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "glass_002",
+    "resource": "tone_kenney_interface_glass_002_730d59",
+    "sha256": "08e972c73e53c91d6d310e107e80db60edce78ae47225889a028e628a6f3da49",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "glass_003",
+    "resource": "tone_kenney_interface_glass_003_3e2dd4",
+    "sha256": "9a6f16e3c2eff6fe5d017a4755a28306b14555728831cd00d70308e8f9689566",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "glass_004",
+    "resource": "tone_kenney_interface_glass_004_77047b",
+    "sha256": "2379b58f953e3d86982aa8cddcae763022c6258e9820171bf905ce58b4e97766",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "glass_005",
+    "resource": "tone_kenney_interface_glass_005_ac64e6",
+    "sha256": "1f6c88008d0d9fe449197512811785e1d4638daf408a96a4a02756530e019172",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "glass_006",
+    "resource": "tone_kenney_interface_glass_006_0fd747",
+    "sha256": "840500be48078f1210f1fd7a9ac4e5665ed9b6f4a2b8dce91a237152a65e94cc",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "glitch_001",
+    "resource": "tone_kenney_interface_glitch_001_27a124",
+    "sha256": "da78c642bbd95da2c364ed0e991ebbfc5a4c0d281165d932b5819e0dd31a39d2",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "glitch_002",
+    "resource": "tone_kenney_interface_glitch_002_477ade",
+    "sha256": "1da06a2e63ce131f5e0316ca27c75fc0d672db7a8f9b986c70693f2bd992eabc",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "glitch_003",
+    "resource": "tone_kenney_interface_glitch_003_a72ac7",
+    "sha256": "d55e0c64aee9f1ab2ba9523d0e256ca76639c3ec2f230405e2ff25aff36020b3",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "glitch_004",
+    "resource": "tone_kenney_interface_glitch_004_6d5c5d",
+    "sha256": "d0f4db4d12f88592bc328bd621d356d099eaa2dda37bab37a6cf17891c5026d1",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "maximize_001",
+    "resource": "tone_kenney_interface_maximize_001_2b0b48",
+    "sha256": "fd3e75e1de2f2fda90aceeacaeb0427ac8bddd3b07a6ce2a8f9ba923df3771f9",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "maximize_002",
+    "resource": "tone_kenney_interface_maximize_002_d0b2e6",
+    "sha256": "cc51162cb4506158b953b121bf479aad070056533ade5c5cd2f980183127ceb4",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "maximize_003",
+    "resource": "tone_kenney_interface_maximize_003_561ba0",
+    "sha256": "df16f25d45189f5d44d6a482ab20d5067350ca8525a9affa1f8ce599e31a20a5",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "maximize_004",
+    "resource": "tone_kenney_interface_maximize_004_fe56c9",
+    "sha256": "59c7a24b204be24d2a44a86d1e4d18c2cf51fa0446967a14b2590e8fb3afaf34",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "maximize_005",
+    "resource": "tone_kenney_interface_maximize_005_823cf6",
+    "sha256": "0ee06fc3ee494723fc95b2224f9dc0af857f2903e7f94d5d33d8e67f454b3cf7",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "maximize_006",
+    "resource": "tone_kenney_interface_maximize_006_3f4b68",
+    "sha256": "f050b3bb77cb0b901bc8df43d2cc1872c353aebae10b4030cf8ae681726ad343",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "maximize_007",
+    "resource": "tone_kenney_interface_maximize_007_863080",
+    "sha256": "3400931f3f3a1e9cf253efef9069bcdf053edd2234e4ee9bf88977c389943484",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "maximize_008",
+    "resource": "tone_kenney_interface_maximize_008_4280d1",
+    "sha256": "57c074e600e193a303ce781c04c0ccc191c6030f9f106594fd94a65e55435c17",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "maximize_009",
+    "resource": "tone_kenney_interface_maximize_009_dfc1b2",
+    "sha256": "b4d56386258b3cc1c8f6e5a22465f8cd65de3d4309e022664050f43151e466cd",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "minimize_001",
+    "resource": "tone_kenney_interface_minimize_001_285e85",
+    "sha256": "8481912bc7fa5828924a00ef15b6cd613b994956e0817bd3122065c9b2896d2d",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "minimize_002",
+    "resource": "tone_kenney_interface_minimize_002_43b419",
+    "sha256": "670e47846dc003fe29d39c8dfebb8635bfcacae3c0916392c0e8bff659493ad6",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "minimize_003",
+    "resource": "tone_kenney_interface_minimize_003_32dd93",
+    "sha256": "400e1041499de85ec8b5529a35ff36787288175c4696cf2018ecff24a3a3fd29",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "minimize_004",
+    "resource": "tone_kenney_interface_minimize_004_05bc22",
+    "sha256": "fcfe6fbb03a728e90b907f34d2ec7bf3ea1857397c3e47ee01990c1be059e4f6",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "minimize_005",
+    "resource": "tone_kenney_interface_minimize_005_d02093",
+    "sha256": "4e6792a98c75d3ff187c0c55561c38c569e02c64757ebebb98831cfe84e3e172",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "minimize_006",
+    "resource": "tone_kenney_interface_minimize_006_8335b1",
+    "sha256": "39d7c47855b9642f43548b7b132c20e20a1490c7eb13d10008c32fcb24da19f8",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "minimize_007",
+    "resource": "tone_kenney_interface_minimize_007_0bc043",
+    "sha256": "e951505044de0d5d87b72ce7f312ac3fbbdde025ec8c10db70f9d2651a2c8947",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "minimize_008",
+    "resource": "tone_kenney_interface_minimize_008_08fb20",
+    "sha256": "bc14c17875436dcaaf809c25db5e61454dbc35612880f329ff37a95ef9b6a865",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "minimize_009",
+    "resource": "tone_kenney_interface_minimize_009_0aec92",
+    "sha256": "885c20fc8b5b52226288794842a403821cd16e9800ec1d76be7a2f1655542eb8",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "open_001",
+    "resource": "tone_kenney_interface_open_001_baebd1",
+    "sha256": "a27c6bb0df7da1e6af5dd5937593c98bc58b6e513f42fe6a3254cd6a6949c648",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "open_002",
+    "resource": "tone_kenney_interface_open_002_753769",
+    "sha256": "24ff224fe2c09c6aed1b41249825382dc74cf324b887ff279d8494912ce2beee",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "open_003",
+    "resource": "tone_kenney_interface_open_003_43c141",
+    "sha256": "bcdca6b5c9c33aa15ca3fb18a1fa8d98a01b528b85be08c5a610e57c75fc022d",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "open_004",
+    "resource": "tone_kenney_interface_open_004_6d7e32",
+    "sha256": "4e02b8287bc4d9e7bf7a889cb9e48613c8eb22a310dfb0bf29c2bfd0a1e4bea5",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "pluck_001",
+    "resource": "tone_kenney_interface_pluck_001_9b668a",
+    "sha256": "be97ec4893a02d6eccfb678daa76c83e34cb2583b834ec2593d2641def739fa4",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "pluck_002",
+    "resource": "tone_kenney_interface_pluck_002_8fe45b",
+    "sha256": "c977fe249ff42d1c93a552b33abc13a8399df3879fa510475426e5c4bbac1da9",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "question_001",
+    "resource": "tone_kenney_interface_question_001_a091d5",
+    "sha256": "abb8f9e4eb2071491b0b15f84ee302386b1847609310c1b000ae174639a6cc5a",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "question_002",
+    "resource": "tone_kenney_interface_question_002_1244fe",
+    "sha256": "46056f10c70dda860e93bd27b66f4d33c0b7154eff28def06471b50028efa5b3",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "question_003",
+    "resource": "tone_kenney_interface_question_003_58e808",
+    "sha256": "00bafc564e29c12e99da584864a750260e7110378251d63d3aa5b3d727836efe",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "question_004",
+    "resource": "tone_kenney_interface_question_004_1f16c1",
+    "sha256": "585ecb58b529dc49b5c5ce5ba93427bf73b7052bae55e49c43ba8f169c93ac99",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "scratch_001",
+    "resource": "tone_kenney_interface_scratch_001_ec0565",
+    "sha256": "5c294d2e1a6b6d07ee2d75b17105a55ad3527e5482dd60652dc49c2ea4c70096",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "scratch_002",
+    "resource": "tone_kenney_interface_scratch_002_594a8f",
+    "sha256": "2b07edafc1f3f49c4813f2b0ae9481c566c1f9962a22d5f5b79da7111e058e56",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "scratch_003",
+    "resource": "tone_kenney_interface_scratch_003_6bd2bd",
+    "sha256": "2d80371b55ebe2e8b916b84093a8ae7717d09a80c6b617079ade5bd0dacba7b7",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "scratch_004",
+    "resource": "tone_kenney_interface_scratch_004_afd578",
+    "sha256": "26009c67ef90ee7a5a2bc458ef9e7f5a9da83da9397a830cff9e4a1813914687",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "scratch_005",
+    "resource": "tone_kenney_interface_scratch_005_7965b6",
+    "sha256": "65742c15dca9853611e1c9e83bd04ac0d693f79896715cafa90bad39745d7a62",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "scroll_001",
+    "resource": "tone_kenney_interface_scroll_001_faa627",
+    "sha256": "320c6aafb2c7a503eae508dc443b72d7f7c0a317bfd16813157ed400cd04cf16",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "scroll_002",
+    "resource": "tone_kenney_interface_scroll_002_fb3875",
+    "sha256": "6fbcda22bc45349c66f1ba4b56d6c211b12264e83667de4b9af1e4ffcef74be5",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "scroll_003",
+    "resource": "tone_kenney_interface_scroll_003_83c1f0",
+    "sha256": "c2fecaa6e37c73d7141d0bd303d1c2231428d97c19ce83d50236a56804818643",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "scroll_004",
+    "resource": "tone_kenney_interface_scroll_004_9513f6",
+    "sha256": "431398a3c12ba3aa30ead97f3e2f9b05eb00978facf04b31bda138ab77a2f54c",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "scroll_005",
+    "resource": "tone_kenney_interface_scroll_005_87e826",
+    "sha256": "e39d059462225efa31f758fb2e01871cc96781972b5062873a24a55c88174e02",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "select_001",
+    "resource": "tone_kenney_interface_select_001_055b9d",
+    "sha256": "aec0c31ea934a35936ae0d2ab8fac8123c93aa5647f935853a58dbaf90278b7a",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "select_002",
+    "resource": "tone_kenney_interface_select_002_e6a94d",
+    "sha256": "4cc6ac5341b9b2c86fef80c347de028e9ab9f2e037586ac7d9fa59a403a1c012",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "select_003",
+    "resource": "tone_kenney_interface_select_003_dc3008",
+    "sha256": "9a612fd2f513d52a296906b41071c990f75defe56be3bee60d2d4e2423b51b8b",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "select_004",
+    "resource": "tone_kenney_interface_select_004_75f785",
+    "sha256": "eb6cb435f3f2ab14f85f46a2bdd9073ec511d0f1f8d8c890c6636045703a5fd4",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "select_005",
+    "resource": "tone_kenney_interface_select_005_174668",
+    "sha256": "ad09146e4ea33b931b2f5dfb4051a4f1fe4a36f1a48c42c5e9269c292ae21214",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "select_006",
+    "resource": "tone_kenney_interface_select_006_28843e",
+    "sha256": "b44550fa8d3276c072ce7c3c1315d949f7a28a95bc22b3618ad4eea62eac8abe",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "select_007",
+    "resource": "tone_kenney_interface_select_007_f0c117",
+    "sha256": "cd4390dd2b24f09016a5fa1be63334fa0f1859811f4cf29c02e8e2750f6a2cd0",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "select_008",
+    "resource": "tone_kenney_interface_select_008_7fc9ac",
+    "sha256": "f703b6b1c62dae1c246a46d5c2442802588f68be2df4d17e0d65cf7e0dbfc826",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "switch_001",
+    "resource": "tone_kenney_interface_switch_001_66d297",
+    "sha256": "3b74efad87f1e69dbd1d05c5ad952ab90859b5a3d11da6ec5bd79b4f03b42afa",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "switch_002",
+    "resource": "tone_kenney_interface_switch_002_aabc32",
+    "sha256": "6fc395be2ad1f99ce318a5d28f98fb76dbeb676d83a0b28239d8c1fb90736180",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "switch_003",
+    "resource": "tone_kenney_interface_switch_003_821677",
+    "sha256": "ca12dd32103f401481d5aff56d5e9831174e99bb577139c09b07d046eb8b837e",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "switch_004",
+    "resource": "tone_kenney_interface_switch_004_a5f328",
+    "sha256": "541c19cc1ab712a9efc5765df602e7d0da09d9cafdd297ce1e19b092289fd62f",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "switch_005",
+    "resource": "tone_kenney_interface_switch_005_55fb37",
+    "sha256": "e94dfab6fd6558068ab3ea97e22e4b4f16b83ee440e6abf33ec4c4e9fbe8a70e",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "switch_006",
+    "resource": "tone_kenney_interface_switch_006_9cfc51",
+    "sha256": "2676ddc4e341ee557b4d1dc8767ef8655540d66fb3ded6a1614080dbc4dc6f18",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "switch_007",
+    "resource": "tone_kenney_interface_switch_007_92d26d",
+    "sha256": "eeaf60c2abc7e1b715e2b032401bcbf6b3753b77f96b238f861a034a75515967",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "tick_001",
+    "resource": "tone_kenney_interface_tick_001_34f433",
+    "sha256": "9d057b918024c787bbe6c00beed13a7ef72a3fa0c259add3cef36582792f4230",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "tick_002",
+    "resource": "tone_kenney_interface_tick_002_a34092",
+    "sha256": "869442f54214be902ec7437f79e400dc91c1bfd90d18a6dd2d5b7e41ffbf457b",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "tick_004",
+    "resource": "tone_kenney_interface_tick_004_7dc8db",
+    "sha256": "0253d5f7d8d2afbbc370eac2a4539bb844239f0c98343e516d376b137c06d27c",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "toggle_001",
+    "resource": "tone_kenney_interface_toggle_001_aa476e",
+    "sha256": "ca1d2dde5f0b286abac4f070e23edab8f30927c8a533665cdf2ac6492a415e49",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "toggle_002",
+    "resource": "tone_kenney_interface_toggle_002_8492e1",
+    "sha256": "1f564f5520cfa0764028ce245ad97599d3ece8f0ab504554c403af92ac72b900",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "toggle_003",
+    "resource": "tone_kenney_interface_toggle_003_948659",
+    "sha256": "7e69aba356d590826cce291bbd9dc6a85d7c53858b0e3712fcad30e1ad080b23",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_interface",
+    "name": "toggle_004",
+    "resource": "tone_kenney_interface_toggle_004_720064",
+    "sha256": "d7bf2236fc95a0fe1e3b278259392bcb062644e2d4ec5f9c96f7c09a9928262f",
+    "source": "https://kenney.nl/assets/interface-sounds",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "click1",
+    "resource": "tone_kenney_ui_click1_607e83",
+    "sha256": "59175ac17cd49a68dd736285738441287636112a84a6f7ce0d89921bda5a5360",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "click2",
+    "resource": "tone_kenney_ui_click2_866b73",
+    "sha256": "c394b46bc6737f7f7edfbfa3031ce621b7a43d498d456d6198364eee9cd3e306",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "click3",
+    "resource": "tone_kenney_ui_click3_7e50e5",
+    "sha256": "e3e7fc7ccd9c5cfdf77bffa05aee10d4973812076c76dc889ba2b16ea434127f",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "click4",
+    "resource": "tone_kenney_ui_click4_7d5ad9",
+    "sha256": "9c02bbfc872b50eb8750adf4b7c343120f19f5d2f04ab06a7a8948368a77b872",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "click5",
+    "resource": "tone_kenney_ui_click5_f98622",
+    "sha256": "52d41e0bb012731bf2a391d53ffb52265ef21589c7701e66b391d5e36a65b293",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "mouseclick1",
+    "resource": "tone_kenney_ui_mouseclick1_1b6341",
+    "sha256": "ece1210c62ccae6c9ea4f4c59466d9d453d6b357c7d4b1a6c31196e5e6fea1bf",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "mouserelease1",
+    "resource": "tone_kenney_ui_mouserelease1_a1113e",
+    "sha256": "23cb78cea76d8f1bb1266af228101a09b5d62063f4ac87ead15b1d395c6181f0",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "rollover1",
+    "resource": "tone_kenney_ui_rollover1_ef98fa",
+    "sha256": "4eb47e2e1540c44847b47a89825e21335c820a4e54cacf8c4c1eb5100e36af42",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "rollover2",
+    "resource": "tone_kenney_ui_rollover2_1a3c79",
+    "sha256": "d0bc0fcba496d73df1da8c145e5330df75f87ab5a4f33a9b71461b006b5c338e",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "rollover3",
+    "resource": "tone_kenney_ui_rollover3_083584",
+    "sha256": "641df2c95468f1f035ff0ae964129da10543b4ea8ff6c13f66bcbd899dcfc113",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "rollover4",
+    "resource": "tone_kenney_ui_rollover4_6a9f26",
+    "sha256": "8b70e47aa1d51d220a3609a02cc50ceed6e05a20f51c6f8daaf5fd83eae42cf3",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "rollover5",
+    "resource": "tone_kenney_ui_rollover5_f399a8",
+    "sha256": "3e1805b914a66e63695913d19ba98c5ec584cc69d29c7167d83c460ab752a5d3",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "rollover6",
+    "resource": "tone_kenney_ui_rollover6_d90007",
+    "sha256": "18f6f69f5fdbf55c175ca4eca8447d4ad5d8a315efd985038424f922dadefad8",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch1",
+    "resource": "tone_kenney_ui_switch1_14cf23",
+    "sha256": "efdd1d1e2904fb2d81259cd96bb80101caceae94be02baa4b5310714a6708b19",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch10",
+    "resource": "tone_kenney_ui_switch10_577fe4",
+    "sha256": "bf61b3f3af39b2c680e70ee2f791786edd2bca2016ea683947059f079849bbf3",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch11",
+    "resource": "tone_kenney_ui_switch11_2d3c19",
+    "sha256": "a8d445bd96fe3842ff2dcdd42ae728330baa8928032ca5f3d5cd4b926929550a",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch12",
+    "resource": "tone_kenney_ui_switch12_cfa0e7",
+    "sha256": "dab0c21eacb6536724d139c27c0d60c932c87171752dc8d24d7a826694377f94",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch13",
+    "resource": "tone_kenney_ui_switch13_acc0c9",
+    "sha256": "54d1e63b907274bb415a8de7f652194756a8eeab4079a7cf769ec153b93a436a",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch14",
+    "resource": "tone_kenney_ui_switch14_79de2d",
+    "sha256": "c640b370738c816eda3d1196d8a8dda7130825b4094f3bb3cbba22a9f6f9b7c9",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch15",
+    "resource": "tone_kenney_ui_switch15_e4b5a0",
+    "sha256": "5a20a9d5365dec8fec1311731540f56429cab38822326133c7ce60fbcf9fd275",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch16",
+    "resource": "tone_kenney_ui_switch16_7c5dc7",
+    "sha256": "d2e9dd4fd2918132f8400e270701384e93139f2207ac115705a2c183cf3d2098",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch17",
+    "resource": "tone_kenney_ui_switch17_948872",
+    "sha256": "d09974d4cf5ccb2d75647e2464cd424e7e3c7a0374e73e8a22577662031a3677",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch18",
+    "resource": "tone_kenney_ui_switch18_9e5707",
+    "sha256": "ba759707fc2e55f4e7d1edd1dd78a4110267f4dc564edfb989c00f062ef69d8c",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch19",
+    "resource": "tone_kenney_ui_switch19_25fc56",
+    "sha256": "63753f884e4e0d44b0939bee9f048b32e658d996958930363c0579ffa0f810c1",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch2",
+    "resource": "tone_kenney_ui_switch2_ab1f70",
+    "sha256": "aa8ad6e4745e87c84c24a0335e0e0f8629ccbbc474ccfd544fe07d7f3a1b2280",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch20",
+    "resource": "tone_kenney_ui_switch20_b55231",
+    "sha256": "276b402ee4840f88a8df4eca6ece029b61c5840fa9149b0c5008fe4bda89cc21",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch21",
+    "resource": "tone_kenney_ui_switch21_3f1840",
+    "sha256": "8a3fdc5d35c74ae4ce4ec75c1f85c7f5fac1a2a6ac838353b09c48c5d7888fc9",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch22",
+    "resource": "tone_kenney_ui_switch22_f96336",
+    "sha256": "913261ad55fa0692902e4027a7a139844e7589d30c4286ab10e6d637f28b1d9f",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch23",
+    "resource": "tone_kenney_ui_switch23_a11001",
+    "sha256": "148d91722dd819b450d8b50e65686d9b1d39d38ca05b361caa387bcbd2a90d81",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch24",
+    "resource": "tone_kenney_ui_switch24_ebd3be",
+    "sha256": "aec5e91eef35c4a64d3bec7a25e54a68fa0448f4cf3179455e18c72c3dda60e9",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch25",
+    "resource": "tone_kenney_ui_switch25_607764",
+    "sha256": "ba31fc9a780a6908809154e0108e8d2728b5b9a6e769c8f56d61d920fba100ae",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch26",
+    "resource": "tone_kenney_ui_switch26_70d837",
+    "sha256": "1a628e2fbede99afdb57533fa367f352fede596df18c91deb841a21f8171654a",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch27",
+    "resource": "tone_kenney_ui_switch27_d7bc3a",
+    "sha256": "a6a3a5fa54037e3b69c0fe7f2d9b50422cb23dd616bb7f72ac0a2a028a810028",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch28",
+    "resource": "tone_kenney_ui_switch28_21e0b9",
+    "sha256": "2f7b627d85ce1530faef5374d3826bfca1ff2823b1b41d5f908448976061e2d4",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch29",
+    "resource": "tone_kenney_ui_switch29_e2ce4e",
+    "sha256": "b2923ed170e963b5e211bf73e75f8eeb41f6b49a46eb52f3b3fc43234c713a16",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch3",
+    "resource": "tone_kenney_ui_switch3_ddd2b2",
+    "sha256": "75d87dc60b7d29df838530af8c9e28205102234e07b5f1e849aa3d95c3922bd0",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch30",
+    "resource": "tone_kenney_ui_switch30_1a3805",
+    "sha256": "d220abb5218fccc6d37649e17e7cce2a4e253f474332d9ea2b0f0518264aff5a",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch31",
+    "resource": "tone_kenney_ui_switch31_c4bcde",
+    "sha256": "bca5f3047e73d28f6619d49a45dee1984340c165da5fa49b239068c2cb9b4be1",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch32",
+    "resource": "tone_kenney_ui_switch32_ac8b98",
+    "sha256": "b740f507ad386a1d09bb5ca69a75231656a71375df11348fcd2d5e323b8d6727",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch33",
+    "resource": "tone_kenney_ui_switch33_cdad74",
+    "sha256": "977ecead4b27cf9801aed433bfa4bdfcf49444c15990d27d2e472401a1fb2742",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch34",
+    "resource": "tone_kenney_ui_switch34_5334cb",
+    "sha256": "6e7943ed133c1b559d009da5028da0a318fee0b1bcfe6e4fa49744ba2cd3975b",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch35",
+    "resource": "tone_kenney_ui_switch35_15f15f",
+    "sha256": "1ec7f5a76318f88c499d37567167f565cb564266d52b37112aac6467fe4126cb",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch36",
+    "resource": "tone_kenney_ui_switch36_9a7f89",
+    "sha256": "1dd3cf29291219ab2eed0292d5c3b06b1e102ea70821099e741fc127734ffa04",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch37",
+    "resource": "tone_kenney_ui_switch37_ed9c0e",
+    "sha256": "25faa57a3e819a3e3a2191934226e540467fcd11680131a7a77b47271048327e",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch38",
+    "resource": "tone_kenney_ui_switch38_0696b4",
+    "sha256": "d5c164ba622e3c7904eb0f442a81cff9985bebbd8951202348d2a7c8a449309b",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch4",
+    "resource": "tone_kenney_ui_switch4_d080f2",
+    "sha256": "687a42c24e5d25be1a256f35a439fe858548fe76d43ccfb17db546618b0d36db",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch5",
+    "resource": "tone_kenney_ui_switch5_a61070",
+    "sha256": "8a5c85c0009cfd985634e8fdb4e0350690be5d85fd49f43a90b35c7de0bef7c0",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch6",
+    "resource": "tone_kenney_ui_switch6_58abd5",
+    "sha256": "34d37cbfe6785cab2f3217b613fc976ba05b869c0ce61381eafa67ee257ecc9d",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch7",
+    "resource": "tone_kenney_ui_switch7_cdb4e6",
+    "sha256": "7a3032d1dae63d1096cf2f1e59cb43e598d5229dcb9617e9d3fb13e96c78d5f2",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch8",
+    "resource": "tone_kenney_ui_switch8_3a4519",
+    "sha256": "c7bf07f8d58ac62faac2427868619631b1a89b0ab08e87c7c01621a086fa1873",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  },
+  {
+    "group": "kenney_ui",
+    "name": "switch9",
+    "resource": "tone_kenney_ui_switch9_841ce7",
+    "sha256": "069861740681c528866483e3d528d79034f24d744c4fc79f7045b7d9ed999e26",
+    "source": "https://kenney.nl/assets/ui-audio",
+    "license": "CC0-1.0"
+  }
+]
