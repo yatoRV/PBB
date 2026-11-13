@@ -217,12 +217,16 @@ export class DriveSync {
     try { cached = await this._cache.load(this.sub); if (cached) for (const f of cached.files) await this._digest(f); }
     catch (e) { cached = null; this._log('cacheError', { message: String(e?.message ?? e) }); }
     let remote = null, failed = null;
-    try { remote = await this._loadRemote(); } catch (e) { if (e instanceof AuthError || e instanceof RestoreError) throw e; failed = e; }
+    try { remote = await this._loadRemote(cached); } catch (e) { if (e instanceof AuthError || e instanceof RestoreError) throw e; failed = e; }
     let state, source, dirty = false, base = null;
     const R = remote?.doc ?? null;
     if (failed) {
       if (!cached) throw new RestoreError('drive', failed);
       state = cached; source = 'cache'; dirty = cached.dirty; base = cached.base; this._remote = cached.remote ?? noRemote();
+    } else if (remote.unchanged) {
+      // Task A6: Drive still holds this device's base (same du-lieu.json version, every large file still there):
+      // nothing was downloaded; the copy here is what Drive has, plus this device's own unsaved changes.
+      state = cached; source = 'cache'; dirty = cached.dirty; base = cached.base; this._remote = remote.meta;
     } else {
       this._remote = remote.meta;
       if (R && cached && cached.base?.docId === R.docId && String(cached.base.version) === String(R.version)) {
@@ -237,7 +241,7 @@ export class DriveSync {
         state = cached; source = 'cache'; dirty = cached.dirty || sharedOf(cached).files.length > 0 || Object.values(sharedOf(cached).prefs).some(e => e.length);
       } else { state = EMPTY; source = 'empty'; }
     }
-    const info = { source, driveVersion: R?.version ?? null, baseVersion: cached?.base?.version ?? null, cacheDirty: cached?.dirty ?? null, offline: !!failed };
+    const info = { source, driveVersion: R?.version ?? remote?.meta?.version ?? null, baseVersion: cached?.base?.version ?? null, cacheDirty: cached?.dirty ?? null, offline: !!failed };
     this._log('restore', info);
     if (source === 'merge') this._log('merge', { at: 'restore', driveVersion: R.version, baseVersion: cached.base?.version ?? null });
     if (source === 'empty' && cached) this._log('reset', { baseVersion: cached.base?.version ?? null });
@@ -253,15 +257,30 @@ export class DriveSync {
     if (dirty) { this._firstPending = this._now(); this._scheduleUpload(0); }
     return info;
   }
-  async _loadRemote() {
+  /** cached: this device's copy (or null). Task A6: when Drive still holds the version this copy was based on, and
+   *  every large file it points at is still in the folder, nothing is downloaded ({ unchanged: true }); else
+   *  du-lieu.json is downloaded and the large files this device already has (same sha256) are not. */
+  async _loadRemote(cached = null) {
     const folderId = await this._api.findOrCreateFolder(this._folderName);
-    const docs = (await this._api.listFolder(folderId)).filter(f => f.name === DATA_FILE); // oldest first
+    const listed = await this._api.listFolder(folderId);
+    const docs = listed.filter(f => f.name === DATA_FILE); // oldest first
     if (!docs.length) return { meta: { folderId, docId: null, version: null, large: [] }, doc: null };
-    const doc = await this._loadDoc(docs[0].id, new Map());
+    const docId = docs[0].id, mine = cached?.remote;
+    if (cached?.base != null && cached.base.docId === docId && mine?.docId === docId && String(mine.version) === String(cached.base.version)) {
+      const meta = await this._api.get(docId, 'id,version,trashed');
+      const live = new Set(listed.map(f => f.id));
+      if (!meta.trashed && String(meta.version) === String(cached.base.version) && (mine.large ?? []).every(l => live.has(l.id))) {
+        return { meta: { folderId, docId, version: String(meta.version), large: mine.large ?? [] }, doc: null, unchanged: true };
+      }
+    }
+    const have = new Map();
+    for (const f of cached?.files ?? []) if (f.bytes != null && f.sha256 != null) have.set(f.sha256, f.bytes);
+    const doc = await this._loadDoc(docId, have, new Set(listed.map(f => f.id)));
     return { meta: { folderId, docId: doc.docId, version: doc.version, large: doc.largeIndex }, doc };
   }
-  /** Downloads du-lieu.json and its large files (bytes already on this device, by sha256, are reused). */
-  async _loadDoc(docId, have) {
+  /** Downloads du-lieu.json and its large files (bytes already on this device, by sha256, are reused). live: ids of
+   *  the files in the folder (Task A6): a large file not among them is gone, as a download would find (404). */
+  async _loadDoc(docId, have, live = null) {
     const meta = await this._api.get(docId, 'id,version,trashed');
     let json;
     try { json = JSON.parse(new TextDecoder('utf-8').decode(await this._api.download(docId))); } catch (e) { if (e instanceof SyntaxError) throw new RestoreError('bad ' + DATA_FILE, e); throw e; }
@@ -274,6 +293,7 @@ export class DriveSync {
     };
     for (const l of json.large ?? []) {
       if (l.missing) { phantom(l); continue; }
+      if (live != null && !live.has(l.id)) { this._log('missingFile', { path: l.path }); phantom(l); continue; }
       let bytes = have.get(l.sha256) ?? null;
       if (bytes == null) {
         try { bytes = await this._api.download(l.id); }

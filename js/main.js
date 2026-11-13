@@ -1,7 +1,7 @@
 // App shell: Google sign-in first, then the user's data from Google Drive, then the app screens.
 // Nothing of the app (data, screens) is loaded before a valid Google token and the account's profile exist.
 // Boot after sign-in: restore Drive data (prefs + files) → AppLog.initialize (LogApplication.onCreate) →
-// await Personnel.load(context) → theme → mount js/ui/start.js. Every change is then autosaved by DriveSync.
+// await Personnel.load(context) → theme → old pipe-scans folders pruned (Task A6) → mount js/ui/start.js. Every change is then autosaved by DriveSync.
 // Only what the sign-in screen needs is imported statically; the app modules (≈ 45 files) load in the background
 // once that screen shows (loadApp), so it appears without waiting for them.
 import { GOOGLE_CLIENT_ID, GOOGLE_SCOPES } from './config.js';
@@ -16,6 +16,14 @@ function loadApp() {
     import('./shell/theme.js'), import('./platform/context.js'), import('./core/AppLog.js'), import('./core/Personnel.js'),
   ]).then(ms => (appModules = Object.assign({}, ...ms)), e => { appLoaded = null; throw e; });
   return appLoaded;
+}
+/** Task A6: the screens' modules (js/ui/start.js and the main screen, with the OCR and job modules they import) start
+ *  downloading while the user signs in or while Drive is read, instead of after; loading them runs no app code (they
+ *  only define classes and functions). A failure here is met again, and handled, by the real import later. */
+let screensLoading = null;
+function preloadScreens() {
+  if (screensLoading == null) screensLoading = Promise.all([import('./ui/start.js'), import('./ui/MainActivity.js')]).catch(() => { screensLoading = null; });
+  return screensLoading;
 }
 
 // GitHub Pages cannot send frame-ancestors / X-Frame-Options: the app never runs inside another site's frame
@@ -77,6 +85,7 @@ async function enter(profile) {
   show('boot');
   let m;
   try { m = await loadApp(); } catch (e) { entered = false; showSignIn(MESSAGES.failed); return; }
+  preloadScreens(); // meanwhile Drive is read (Task A6)
   const { UserCache, DriveApi, DriveSync, AppLog, appContext, startTheme, Personnel, registerServiceWorker } = m;
   cache = new UserCache();
   const api = new DriveApi({ fetch: (...a) => fetch(...a), getToken: () => auth.token() });
@@ -90,6 +99,12 @@ async function enter(profile) {
     for (const [type, pairs] of pendingLogs.splice(0)) AppLog.event('drive.' + type, AppLog.data(...pairs));
     theme = startTheme(appContext);
     await Personnel.load(appContext);
+    // Task A6: the evidence folders of earlier pipe readings nothing refers to any more (they went to Drive with
+    // every save and came back at every sign-in); before any reading can start.
+    try {
+      const { prunePipeScans } = await import('./shell/prune-scans.js'); const pruned = prunePipeScans();
+      if (pruned.removed > 0) AppLog.event('storage.pipeScansPruned', AppLog.data('removed', pruned.removed, 'kept', pruned.kept, 'files', pruned.files, 'bytes', pruned.bytes));
+    } catch (e) { logSync('pruneFailed', { message: String(e?.message ?? e) }); } // tried again at the next sign-in
     const root = views.app;
     show('app');
     const { mount } = await import('./ui/start.js');
@@ -139,7 +154,7 @@ async function boot() {
   let profile = null;
   try { profile = await auth.restore(); } catch (e) { profile = null; }
   if (profile) await enter(profile);
-  else { showSignIn(gisState === 'failed' ? MESSAGES.failed : ''); clearSignedOutOcrCheckpoints(); loadApp().catch(() => { /* retried by enter() */ }); }
+  else { showSignIn(gisState === 'failed' ? MESSAGES.failed : ''); clearSignedOutOcrCheckpoints(); loadApp().then(preloadScreens, () => { /* retried by enter() */ }); }
 }
 boot();
 
