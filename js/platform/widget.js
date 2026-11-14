@@ -36,7 +36,7 @@ export class AlertDialog {
   static BUTTON_NEGATIVE = DialogInterface.BUTTON_NEGATIVE;
   static BUTTON_NEUTRAL = DialogInterface.BUTTON_NEUTRAL;
   constructor(context, p) {
-    this.context = context; this._showing = false; this._gone = false; this._buttons = new Map();
+    this.context = context; this._showing = false; this._gone = false; this._buttons = new Map(); this._cancelable = p.cancelable !== false;
     this._onShow = null; this._onCancel = null; this._onDismiss = null; this._cancelOnOutside = true;
     const el = this._el = document.createElement('dialog');
     el.className = 'dlg' + (p.theme ? ' dlg--' + p.theme : '');
@@ -69,6 +69,8 @@ export class AlertDialog {
     el.addEventListener('click', ev => { if (ev.target === el && this._cancelOnOutside && p.cancelable !== false) this.cancel(); });
   }
   getButton(which) { return this._buttons.get(which) ?? null; }
+  /** False after setCancelable(false): the back key leaves the dialog open (cancel() itself still cancels). */
+  isCancelable() { return this._cancelable; }
   /** Window.getDecorView(): the dialog element (UiSessionLog observes it). */
   getWindow() { if (this._window == null) { const el = this._el; this._window = { getDecorView: () => el }; } return this._window; }
   setOnShowListener(fn) { this._onShow = fn; }

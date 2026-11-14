@@ -212,12 +212,14 @@ export class DriveSync {
    * listening for changes. A copy with changes Drive does not have is merged with Drive (three-way against the base
    * it started from) and uploaded. Throws RestoreError when Drive cannot be read and this device has no copy.
    */
-  async restore() {
+  async restore({ offline = false } = {}) {
     let cached = null;
     try { cached = await this._cache.load(this.sub); if (cached) for (const f of cached.files) await this._digest(f); }
     catch (e) { cached = null; this._log('cacheError', { message: String(e?.message ?? e) }); }
     let remote = null, failed = null;
-    try { remote = await this._loadRemote(cached); } catch (e) { if (e instanceof AuthError || e instanceof RestoreError) throw e; failed = e; }
+    // offline (Task A8): no token yet (a remembered account): this device's copy now, Drive after the next token
+    if (offline) failed = new AuthError('no token yet');
+    else try { remote = await this._loadRemote(cached); } catch (e) { if (e instanceof AuthError || e instanceof RestoreError) throw e; failed = e; }
     let state, source, dirty = false, base = null;
     const R = remote?.doc ?? null;
     if (failed) {
@@ -370,6 +372,16 @@ export class DriveSync {
     this.stop();
     try { await this._running; } catch (e) { /* reported already */ }
     await this._cacheChain;
+  }
+  /** "Đăng xuất ngay" (Task A7): writes the current state to IndexedDB, stops listening and the timers, and does not
+   *  wait for Drive (an upload in flight is dropped by the page reload that follows). Resolves to true when Drive may
+   *  not have everything yet (dirty: a change not uploaded, or its upload not finished — dirty clears only after a
+   *  successful upload): the caller then keeps this device's copy, and the next sign-in of the account sends it
+   *  (restore merges a dirty copy). A pull in flight alone keeps nothing. */
+  async leave() {
+    const local = this._saveLocal(); this.stop();
+    await local;
+    return this.dirty;
   }
   /** Stops listening and cancels pending timers (sign-out). */
   stop() {

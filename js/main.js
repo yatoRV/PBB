@@ -39,7 +39,9 @@ let gisState = 'loading'; // the button stays disabled until GIS is loaded, so t
 function showSignIn(message = '') { errorLine.textContent = message; button.disabled = gisState === 'loading'; show('signin'); }
 function sessionStore() { try { return globalThis.sessionStorage; } catch (e) { return null; } }
 
-const auth = new GoogleAuth({ fetch: (...a) => fetch(...a), clientId: GOOGLE_CLIENT_ID, scopes: GOOGLE_SCOPES, storage: sessionStore() });
+function localStore() { try { return globalThis.localStorage; } catch (e) { return null; } }
+// Task A8: the account is remembered on this device (never the token) until "Đăng xuất".
+const auth = new GoogleAuth({ fetch: (...a) => fetch(...a), clientId: GOOGLE_CLIENT_ID, scopes: GOOGLE_SCOPES, storage: sessionStore(), accountStorage: localStore() });
 /** The GIS library (loaded at start; loading again after a failure, e.g. offline). */
 const ensureGis = () => loadGis(document).then(gis => { auth.attachGis(gis); gisState = 'ready'; return gis; });
 ensureGis().then(() => { if (!entered) button.disabled = false; }, () => {
@@ -59,8 +61,15 @@ function logSync(type, data) {
 
 const reauth = reauthOnGesture({
   doc: document, auth,
-  onToken: () => { sync?.retry(); },
-  onError: e => logSync('reauthFailed', { kind: e?.kind ?? 'failed', message: String(e?.message ?? e) }),
+  onToken: () => { sync?.check(); }, // uploads what waits, else pulls what other devices saved (Task A8)
+  onError: e => {
+    logSync('reauthFailed', { kind: e?.kind ?? 'failed', message: String(e?.message ?? e) });
+    if (e?.kind !== 'account') return true; // asked again at the next tap
+    // Task A8: the browser's Google account is not the remembered one: no popup at every tap; the copy here stays,
+    // and "Đăng xuất" then signing in with the right account brings Drive back.
+    import('./platform/widget.js').then(({ Toast }) => Toast.makeText(appModules?.appContext, 'Tài khoản Google trên trình duyệt khác tài khoản của app nên chưa đồng bộ được với Google Drive. Bấm Đăng xuất rồi đăng nhập lại đúng tài khoản.', Toast.LENGTH_LONG).show()).catch(() => {});
+    return false;
+  },
 });
 
 /**
@@ -91,8 +100,11 @@ async function enter(profile) {
   const api = new DriveApi({ fetch: (...a) => fetch(...a), getToken: () => auth.token() });
   sync = new DriveSync({ api, cache, sub: profile.sub, log: logSync, onAuthNeeded: () => { auth.invalidate(); reauth.arm(); },
     onRemoteChange: remoteChanged, mayApplyRemote: () => !ui.blocked(), onRemoteWaiting: remoteWaiting });
-  try { await sync.restore(); }
-  catch (e) { await sync.close(); sync = null; entered = false; showSignIn(signInMessage(e)); return; }
+  // Task A8: a remembered account without a token opens this device's copy; Drive follows the next tap.
+  const offline = auth.token() == null;
+  try { await sync.restore({ offline }); }
+  catch (e) { await sync.close(); sync = null; entered = false; showSignIn(offline ? '' : signInMessage(e)); return; }
+  if (offline) reauth.arm();
   unwire = wirePageLifecycle({ doc: document, win: window, sync });
   try {
     AppLog.initialize(appContext);
@@ -131,7 +143,6 @@ button.addEventListener('click', async () => {
   } catch (e) { if (!entered) showSignIn(signInMessage(e)); }
 });
 
-function localStore() { try { return globalThis.localStorage; } catch (e) { return null; } }
 /** OCR checkpoints of reading jobs (js/ocr/checkpoint.js, Task A2) at "Đăng xuất": the account's entries are deleted
  *  now (calls still running write nothing) and marked, so a page that starts signed out deletes whatever another tab
  *  of that account wrote since. A page that is only signed out (new tab, restart, expired session) keeps them, so an
@@ -161,18 +172,30 @@ boot();
 /**
  * Signs out: saves what is pending, wipes this account's copy on this device, revokes the token and reloads to
  * the sign-in screen. Rejects with Error('unsynced') when changes could not reach Drive, unless discardUnsynced.
+ * now (Task A7, "Đăng xuất ngay"): does not wait for Drive; when Drive may not have everything yet, this device's copy
+ * (and the account's OCR checkpoints) are kept, and the next sign-in of the account sends the changes. It may be
+ * called while a waiting sign-out is still saving; that one then stops. The token revoke waits at most REVOKE_WAIT_MS.
  * The APK has no sign-out; the main screen places it next to Reset / Giao diện (user decision, Task 11).
  */
-export async function signOut({ discardUnsynced = false } = {}) {
+const REVOKE_WAIT_MS = 1500;
+let leavingNow = false;
+export async function signOut({ discardUnsynced = false, now = false } = {}) {
   if (sync) {
-    await sync.flush();
-    if (sync.dirty && !discardUnsynced) throw new Error('unsynced');
+    let keep = false;
+    if (now) { leavingNow = true; try { keep = await sync.leave(); } catch (e) { leavingNow = false; throw e; } }
+    else {
+      await sync.flush();
+      if (leavingNow) return new Promise(() => {}); // "Đăng xuất ngay" took over meanwhile; the page is reloading
+      if (sync.dirty && !discardUnsynced) throw new Error('unsynced');
+    }
     unwire?.(); theme?.stop(); reauth.disarm();
-    await sync.close(); // no IndexedDB write can follow the wipe
-    try { await cache.wipe(sync.sub); } catch (e) { /* the reload drops the memory copy anyway */ }
-    await signOutOcrCheckpoints(sync.sub); // the account's OCR checkpoints go with it (Task A2)
+    if (!now) await sync.close(); // no IndexedDB write can follow the wipe
+    if (!keep) {
+      try { await cache.wipe(sync.sub); } catch (e) { /* the reload drops the memory copy anyway */ }
+      await signOutOcrCheckpoints(sync.sub); // the account's OCR checkpoints go with it (Task A2)
+    }
   }
-  await auth.signOut();
+  await Promise.race([auth.signOut(), new Promise(resolve => setTimeout(resolve, REVOKE_WAIT_MS))]);
   location.reload();
 }
 /** Signed-in account ({sub, email, name, picture}) or null, and the autosave (status, onStatus, flush). */

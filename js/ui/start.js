@@ -43,7 +43,7 @@ export class Router {
     if (this.shell.setReloadGuard) this.shell.setReloadGuard(() => defaultReloadGuard(document) || (this.top()?.holdsRemote() ?? false));
   }
   _pushSentinel() { if (this._history) try { history.pushState({ lich: 'top' }, ''); } catch (e) { /* ignore */ } }
-  back() { const dialog = AlertDialog.top(); if (dialog != null) { dialog.cancel(); return; } const top = this.top(); if (top != null) top.onBackPressed(); }
+  back() { const dialog = AlertDialog.top(); if (dialog != null) { if (dialog.isCancelable()) dialog.cancel(); return; } const top = this.top(); if (top != null) top.onBackPressed(); }
   _pause(a) { a._resumed = false; a.onPause(); a.onStop(); }
   _resume(a) { a._resumed = true; a.onResume(); }
   async start(intent, request = -1, caller = null) {

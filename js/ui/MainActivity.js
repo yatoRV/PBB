@@ -216,8 +216,29 @@ export class MainActivity extends ThemedActivity {
     new ThemeUi.DialogBuilder(this).setTitle('Đăng xuất?').setMessage((email === '' ? 'Đăng xuất tài khoản Google này?' : 'Đăng xuất tài khoản ' + email + '?') + '\n\nDữ liệu đã lưu trên Google Drive được giữ nguyên. Đăng nhập lại để dùng tiếp.')
       .setNegativeButton('Hủy', null).setPositiveButton('Đăng xuất', () => {
         if (this.busy) { this.error('Đang xử lý', 'Chờ tác vụ hiện tại hoàn tất rồi Đăng xuất.'); return; }
-        Promise.resolve().then(() => this._shell.signOut()).catch(e => { AppLog.failure('ui.signOut', e); this.error('Chưa đăng xuất', e?.message === 'unsynced' ? 'Còn thay đổi chưa lưu lên Google Drive. Kiểm tra kết nối mạng rồi thử lại.' : 'Đăng xuất không thành công. Vui lòng thử lại.'); });
+        this.signingOut();
       }).show();
+  }
+  /** Web-only (Task A7): the sign-out shows its progress at once (it waits for the last Drive save, which took minutes
+   *  with a large du-lieu.json), and "Đăng xuất ngay" leaves without waiting: changes Drive may not have yet stay on
+   *  this device and are sent at the next sign-in of this account. */
+  signingOut() {
+    const keepNote = 'Thay đổi chưa gửi được giữ trên máy này và tự gửi khi bạn đăng nhập lại tài khoản này.';
+    const dialog = new ThemeUi.DialogBuilder(this).setTitle('Đang đăng xuất…')
+      .setMessage('Đang gửi thay đổi cuối cùng lên Google Drive. Bấm "Đăng xuất ngay" để thoát luôn. ' + keepNote)
+      .setNegativeButton('Đăng xuất ngay', null).setCancelable(false).show();
+    const leave = () => Promise.resolve().then(() => this._shell.signOut({ now: true })).catch(e => { dialog.dismiss(); AppLog.failure('ui.signOut', e); this.error('Chưa đăng xuất', 'Đăng xuất không thành công. Vui lòng thử lại.'); });
+    const now = dialog.getButton(AlertDialog.BUTTON_NEGATIVE); now.setOnClickListener(() => { now.setEnabled(false); leave(); });
+    Promise.resolve().then(() => this._shell.signOut()).catch(e => {
+      dialog.dismiss(); AppLog.failure('ui.signOut', e);
+      if (e?.message !== 'unsynced') { this.error('Chưa đăng xuất', 'Đăng xuất không thành công. Vui lòng thử lại.'); return; }
+      new ThemeUi.DialogBuilder(this).setTitle('Chưa gửi được lên Google Drive')
+        .setMessage('Còn thay đổi chưa lưu lên Google Drive (mất mạng hoặc cần đăng nhập lại). ' + keepNote)
+        .setNegativeButton('Ở lại', null).setPositiveButton('Đăng xuất ngay', () => this.signingOutNow()).show();
+    });
+  }
+  signingOutNow() {
+    Promise.resolve().then(() => this._shell.signOut({ now: true })).catch(e => { AppLog.failure('ui.signOut', e); this.error('Chưa đăng xuất', 'Đăng xuất không thành công. Vui lòng thử lại.'); });
   }
   calendarCard(m, draft) {
     const displayed = this.store.combinedPreview(m, draft);

@@ -29,7 +29,7 @@ export function reauthOnGesture({ doc, auth, onToken, onError = () => {} }) {
   const handler = () => {
     if (busy) return;
     disarm(); busy = true;
-    auth.refresh().then(() => { busy = false; onToken(); }, e => { busy = false; onError(e); arm(); });
+    auth.refresh().then(() => { busy = false; onToken(); }, e => { busy = false; if (onError(e) !== false) arm(); }); // false: stop asking (Task A8)
   };
   function arm() { if (armed || busy) return; armed = true; for (const t of GESTURES) doc.addEventListener(t, handler, { capture: true }); }
   function disarm() { if (!armed) return; armed = false; for (const t of GESTURES) doc.removeEventListener(t, handler, { capture: true }); }
