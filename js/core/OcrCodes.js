@@ -58,9 +58,15 @@ export class OcrCodes {
    *  scans (25/10 photo, its re-shot copies, the user's half sheet): "DG" 28× — all on D6 cells, never another code.
    *  Only a vote, like the S17 forms: without an exact code it needs four agreeing variants. */
   static workCandidate(raw) {
-    const code = OcrCodes.candidate(raw); if (code != null) return code;
+    // APK 4.7 (Update OCR, photo 1): a column rule printed over the S of S10 / S17 / S26 is read as "$" (90 of 90 such
+    // cells on the 7 new photos were S1x).
+    const code = OcrCodes.candidate(raw.replace(/\$/g, 'S')); if (code != null) return code;
     const s = raw.normalize('NFD').replace(/\p{M}/gu, '').toUpperCase().replace(/[^A-Z0-9]/g, '');
-    return s === 'DG' ? 'D6' : null;
+    if (s === 'DG') return 'D6';
+    // APK 4.7: the S lost under that rule, "10" read with at most one letter before it ("10", "A10", "N1O", "I10"): S10,
+    // the only code ending in 10 — 143 of 143 cells with four such variants on the 7 new photos. Only a vote: without an
+    // exact code it needs four agreeing variants (RosterReader.consensus).
+    return /^[A-Z]?[1IL][0O]$/.test(s) ? 'S10' : null;
   }
   static candidate(raw) {
     const exact = Schedule.normalizeShift(raw); if (exact != null) return exact;

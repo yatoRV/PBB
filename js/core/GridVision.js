@@ -82,6 +82,27 @@ class Grid {
     return result;
   }
   cell(col, row) { return this.cellFrom(col, row, this.source); }
+  /** Update OCR (B1): the band one row high just above the table's first rule, in column `col` (a second-page sheet
+   *  whose printed day numbers the table outline left out: the outline starts at the first staff row), cut from the
+   *  photo through the table transform; null without the photo (the band would leave the rectified table). */
+  bandAbove(col) {
+    if (this.pipeGeometry != null || this.y.length < 2) return null;
+    const x = this.x, y = this.y, rowSlopes = this.rowSlopes, h = f(y[1] - y[0]);
+    const padX = f(.5), padY = Math.max(1, f(h * f(.07)));
+    const left = f(this.columnBorder(col, 0) + padX), right = f(this.columnBorder(col + 1, 0) - padX), mid = f(this.table.getWidth() / 2);
+    let bl, br;
+    if (this.traces != null) { bl = f(this.ruleY(0, left) - padY); br = f(this.ruleY(0, right) - padY); }
+    else { bl = f(f(y[0] - padY) + f(rowSlopes[0] * f(left - mid))); br = f(f(y[0] - padY) + f(rowSlopes[0] * f(right - mid))); }
+    const tl = f(f(bl - h) + f(2 * padY)), tr = f(f(br - h) + f(2 * padY));
+    // Above the table outline: only from the photo itself (the rectified table starts at its first rule).
+    if (!(right > left) || ((tl < 0 || tr < 0) && this.sourceToTable == null)) return null;
+    const width = Math.max(1, roundF(f(right - left))), height = Math.max(1, roundF(f(f(f(f(bl + br) - tl) - tr) / 2)));
+    const cell = Bitmap.createBitmap(width, height, ARGB_8888); const canvas = new Canvas(cell); canvas.drawColor(Color.WHITE);
+    const matrix = new Matrix(); matrix.setPolyToPoly(Float32Array.of(left, tl, right, tr, right, br, left, bl), 0, Float32Array.of(0, 0, width, 0, width, height, 0, height), 0, 4);
+    if (this.sourceToTable != null) { const direct = new Matrix(); direct.setConcat(matrix, this.sourceToTable); canvas.drawBitmap(this.source, direct, new Paint(Paint.FILTER_BITMAP_FLAG)); }
+    else canvas.drawBitmap(this.table, matrix, new Paint(Paint.FILTER_BITMAP_FLAG));
+    void x; return cell;
+  }
   cellFrom(col, row, input) {
     const x = this.x, y = this.y, rowSlopes = this.rowSlopes;
     if (this.pipeGeometry != null) return this.pipeCell(col, row, input);

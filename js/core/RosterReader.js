@@ -156,7 +156,8 @@ export class RosterReader {
       grid.firstDay = dayCount >= days ? 0 : await this._firstDay(grid, dayCount, days);
       if (grid.firstDay < 0) throw new JavaException('Ảnh có ' + dayCount + ' cột ngày nhưng chưa đọc được số ngày in trên đầu cột, nên chưa biết đó là những ngày nào. Lịch đã lưu vẫn được giữ nguyên.');
     }
-    const first = grid.firstDay, last = first + dayCount;
+    // Update OCR (B1): columns after the month's last day (a sheet printed 16…31, 01) are not read.
+    const first = grid.firstDay, last = Math.min(first + dayCount, days);
     progress.update('Đang đọc ca cho ' + (dayCount < days ? 'ngày ' + (first + 1) + '–' + last + ' (' + dayCount + ' ngày trong ảnh)' : days + ' ngày') + '…');
     result.cells = new Array(days).fill(null); result.raw = new Array(days).fill(null); const shifts = new Array(days).fill(null);
     // Each tile occupies a fixed OCR coordinate; empty days keep their original position.
@@ -209,6 +210,11 @@ export class RosterReader {
     // 3.0, phase 2: the cell reader answers what every OCR pass left unread (and, above, OFF where nothing was read).
     if (this._context != null) {
       if (this._cellReader != null) for (let d = 0; d < days; d++) if (shifts[d] == null && result.cells[d] != null) try { const code = await this._cellReader.read(result.cells[d]); if (code != null) { shifts[d] = code; result.raw[d] += ' / bộ đọc ô: ' + (code === '' ? 'OFF' : code); } } catch (unreadable) { /* stays ? */ }
+      // Update OCR (APK 4.7): an OCR code on a cell the cells model calls empty (the neighbour's S at its edge read as
+      // "|S10") is not stored: '?'. Codes the model filled in above are not asked again.
+      if (this._cellReader != null) for (let d = 0; d < days; d++) if (shifts[d] != null && shifts[d] !== '' && result.cells[d] != null && !result.raw[d].includes('bộ đọc ô:')) try {
+        if (RosterReader.emptyCellOverrides(shifts[d], await this._cellReader.read(result.cells[d]), this._cellReader.labels)) { result.raw[d] += ' / bộ đọc ô: OFF, mã ' + shifts[d] + ' không giữ'; shifts[d] = null; }
+      } catch (unreadable) { /* the OCR code stays */ }
     }
     for (const cell of processed) if (cell != null) cell.recycle(); montage.recycle(); result.schedule = new Schedule(month, ownerNumber, owner, shifts);
     if (dayCount < days) { const inPhoto = new Array(days).fill(false); for (let d = first; d < last; d++) inPhoto[d] = true; result.schedule.withPresence(inPhoto); }
@@ -217,21 +223,74 @@ export class RosterReader {
   /** Which month day (0-based) the first of `count` day columns is, from the numbers printed in the header row
    *  (row 0, else row 1): each column read as a number votes for "first = number − column"; at least 3 columns
    *  and a third of them must agree, else −1 (the days are then not guessed). */
+  /** The first printed day (0-based) of a photo holding part of the month, or -1. Rows 0 and 1 of the table are read;
+   *  Update OCR (B1): when they give no answer, the band just above the table (grid.bandAbove: a second-page sheet
+   *  whose header row the table outline left out), and columns after the month's last day may carry the next month's
+   *  first days (16…31, 01): each column votes for its start day as long as the start fits the month. */
   async _firstDay(grid, count, days) {
-    const tileW = 160, tileH = 100, columns = 4; let best = -1, bestVotes = 0;
+    let best = -1, bestVotes = 0; const needed = Math.max(3, (count / 3) | 0), reads = [];
+    const vote = read => {
+      reads.push(read); const votes = new Int32Array(days + 1);
+      for (let c = 0; c < count; c++) {
+        const p = RosterReader.printedDay(read[c]); if (p < 1) continue;
+        const same = p - c; if (same >= 1) { if (same + c <= days) votes[same]++; continue; }
+        const next = p + days - c; if (next >= 1 && next <= days && next + c > days) votes[next]++; // a next-month column after the last day
+      }
+      for (let day = 1; day <= days; day++) if (votes[day] > bestVotes) { bestVotes = votes[day]; best = day; }
+    };
     for (let row = 0; row < Math.min(2, grid.y.length - 1); row++) {
-      const montage = Bitmap.createBitmap(tileW * columns, (((count + columns - 1) / columns) | 0) * tileH, ARGB_8888); const canvas = new Canvas(montage); canvas.drawColor(Color.WHITE);
-      for (let c = 0; c < count; c++) { const cell = grid.cell(c + 2, row), big = GridVision.enlarge(cell, tileW, tileH); canvas.drawBitmap(big, (c % columns) * tileW, ((c / columns) | 0) * tileH, null); big.recycle(); cell.recycle(); }
-      const read = new Array(count).fill(''); let text; try { text = await this._text(montage); } finally { montage.recycle(); }
+      const read = await this._headerRow(count, c => grid.cell(c + 2, row));
+      if (BuildConfig.DEBUG) Log.d('RosterTest', 'header row ' + row + ': ' + arrayText(read));
+      vote(read);
+    }
+    if (bestVotes < needed && typeof grid.bandAbove === 'function') {
+      // As the rows above, then (small single digits alone in a large tile are often missed) each cell on its own.
+      const montage = await this._headerRow(count, c => grid.bandAbove(c + 2));
+      if (montage != null) { if (BuildConfig.DEBUG) Log.d('RosterTest', 'header band: ' + arrayText(montage)); vote(montage); }
+      if (montage != null && bestVotes < needed) { const singles = await this._headerSingles(count, c => grid.bandAbove(c + 2)); if (singles != null) { if (BuildConfig.DEBUG) Log.d('RosterTest', 'header band, cell by cell: ' + arrayText(singles)); vote(singles); } }
+    }
+    // APK 4.7 (Update OCR, emulator): ML Kit read only "9, L, 8, 6" of row 0's montage on photo 5; rows 0 and 1 each
+    // cell on its own, as the band above — the very last fallback.
+    for (let row = 0; row < Math.min(2, grid.y.length - 1) && bestVotes < needed; row++) {
+      const singles = await this._headerSingles(count, c => grid.cell(c + 2, row));
+      if (singles != null) { if (BuildConfig.DEBUG) Log.d('RosterTest', 'header row ' + row + ', cell by cell: ' + arrayText(singles)); vote(singles); }
+    }
+    if (bestVotes < needed) return -1;
+    // A day the month does not have printed where the alignment puts it (31 on a 30-day month): another month's sheet.
+    for (const read of reads) for (let c = 0; c < count; c++) if (best + c > days && RosterReader.printedDay(read[c]) === best + c) return -1;
+    return best - 1;
+  }
+  /** Update OCR (APK 4.7): an OCR code is withdrawn when the cells model, which knows that code, answered OFF at its
+   *  threshold (answer '' — null below the threshold never withdraws). */
+  static emptyCellOverrides(code, answer, labels) { return code != null && code !== '' && answer === '' && labels.includes(code); }
+  /** A header cell's printed day number (1–31), or -1. */
+  static printedDay(text) { const digits = String(text ?? '').replace(/[^0-9]/g, ''); if (digits === '' || digits.length > 2) return -1; const n = parseInt(digits, 10); return n >= 1 && n <= 31 ? n : -1; }
+  /** Update OCR (B1): each of the `count` header cells read alone, at its own proportions with a white margin (small
+   *  single digits alone in a large montage tile are often missed). count reads: used only as the last fallback. */
+  async _headerSingles(count, cellAt) {
+    const read = new Array(count).fill(''), height = 72, margin = 48;
+    for (let c = 0; c < count; c++) {
+      const cell = cellAt(c); if (cell == null) return null;
+      const width = Math.max(1, Math.round(cell.getWidth() * height / Math.max(1, cell.getHeight())));
+      const page = Bitmap.createBitmap(width + 2 * margin, height + 2 * margin, ARGB_8888); const canvas = new Canvas(page); canvas.drawColor(Color.WHITE);
+      const big = GridVision.enlarge(cell, width, height); canvas.drawBitmap(big, margin, margin, null); big.recycle(); cell.recycle();
+      let text; try { text = await this._text(page); } finally { page.recycle(); }
+      for (const block of text.getTextBlocks()) for (const line of block.getLines()) for (const element of line.getElements()) read[c] += element.getText();
+    }
+    return read;
+  }
+  /** The text of `count` header cells (cellAt(c) → bitmap, or null when there is none) read on one montage, or null. */
+  async _headerRow(count, cellAt) {
+    const tileW = 160, tileH = 100, columns = 4;
+    const montage = Bitmap.createBitmap(tileW * columns, (((count + columns - 1) / columns) | 0) * tileH, ARGB_8888); const canvas = new Canvas(montage); canvas.drawColor(Color.WHITE);
+    try {
+      for (let c = 0; c < count; c++) { const cell = cellAt(c); if (cell == null) return null; const big = GridVision.enlarge(cell, tileW, tileH); canvas.drawBitmap(big, (c % columns) * tileW, ((c / columns) | 0) * tileH, null); big.recycle(); cell.recycle(); }
+      const read = new Array(count).fill(''); const text = await this._text(montage);
       for (const block of text.getTextBlocks()) for (const line of block.getLines()) for (const element of line.getElements()) {
         const b = element.getBoundingBox(); if (b == null) continue; const c = ((b.centerY() / tileH) | 0) * columns + ((b.centerX() / tileW) | 0); if (c >= 0 && c < count) read[c] += element.getText();
       }
-      const votes = new Int32Array(days + 1);
-      for (let c = 0; c < count; c++) { const digits = read[c].replace(/[^0-9]/g, ''); if (digits === '' || digits.length > 2) continue; const start = parseInt(digits, 10) - c; if (start >= 1 && start + count - 1 <= days) votes[start]++; }
-      if (BuildConfig.DEBUG) Log.d('RosterTest', 'header row ' + row + ': ' + arrayText(read));
-      for (let day = 1; day <= days; day++) if (votes[day] > bestVotes) { bestVotes = votes[day]; best = day; }
-    }
-    return bestVotes >= Math.max(3, (count / 3) | 0) ? best - 1 : -1;
+      return read;
+    } finally { montage.recycle(); }
   }
   static consensus(variants) {
     // HashMap in Java: only read when it holds a single code, so its iteration order is never observable.

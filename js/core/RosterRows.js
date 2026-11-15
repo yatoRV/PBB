@@ -28,6 +28,19 @@ export class RosterRows {
   }
   /** Printed STTs climb by one or skip; an unread STT whose neighbours are k-1 and k+1 is k. Used only as a
    *  hint for the row of a person on the list, never as a confirmation. */
+  /** Update OCR (APK 4.7, emulator): ML Kit read STT "12" as "2" and the lookup of STT 2 took STT 12's row (APK 4.6
+   *  too). A printed STT whose nearest printed neighbours above and below count by one across its row but give it
+   *  another number is a misreading: the copy returned has '' there (unread: the neighbours then give its STT). */
+  static withoutMisreadSerials(raw, summary, header = new Array(raw.length).fill(false)) {
+    const s = new Int32Array(raw.length); for (let r = 0; r < raw.length; r++) s[r] = summary[r] || header[r] ? -1 : RosterRows.serial(raw[r]);
+    const out = [...raw];
+    for (let r = 0; r < raw.length; r++) {
+      if (s[r] <= 0) continue;
+      let a = r - 1; while (a >= 0 && s[a] <= 0 && !summary[a] && !header[a]) a--; let b = r + 1; while (b < raw.length && s[b] <= 0 && !summary[b] && !header[b]) b++;
+      if (a >= 0 && b < raw.length && s[a] > 0 && s[b] > 0 && s[b] - s[a] === b - a && s[r] !== s[a] + (r - a)) out[r] = '';
+    }
+    return out;
+  }
   static serials(raw, summary, header = new Array(raw.length).fill(false)) {
     const s = new Int32Array(raw.length); for (let r = 0; r < raw.length; r++) s[r] = summary[r] || header[r] ? -1 : RosterRows.serial(raw[r]);
     const out = s.slice();
@@ -89,6 +102,7 @@ export class RosterRows {
       if (people.length === 1) meant = people[0];
     }
     const head = new Array(names.length).fill(false); for (let r = 0; r < names.length; r++) head[r] = RosterRows.header(names[r]);
+    serials = RosterRows.withoutMisreadSerials(serials, summary, head);
     const score = new Int32Array(names.length), inferred = RosterRows.serials(serials, summary, head); let best = 0;
     for (let r = 0; r < names.length; r++) {
       if (summary[r] || head[r]) continue;

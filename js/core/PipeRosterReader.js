@@ -532,7 +532,7 @@ export class PipeRosterReader {
         const key = Schedule.normalizeName(name); if (pageNames.has(key)) { repeated.add(key); continue; } pageNames.add(key);
         progress.update('Ảnh ' + (page + 1) + ' · ' + name + ' · đang đọc từng cột ca và phân ống…');
         const identity = await this._evidence([nameCells[row]], 'p' + page + '-r' + row + '-name');
-        const employee = book.addByName(numbers[row], name, identity);
+        const known = book.employees.length; const employee = book.addByName(numbers[row], name, identity); const fresh = book.employees.length > known;
         // Columns whose printed date is still open are read exactly like dated ones and kept aside.
         const spans = []; for (const g of groups) spans.push([g.start, g.end]); for (const o of structured) spans.push([o.start, o.end]);
         const cells = [], enhanced = [];
@@ -575,6 +575,15 @@ export class PipeRosterReader {
             offset += size;
           }
         } finally { for (const b of cells) b.recycle(); for (const b of enhanced) b.recycle(); }
+        // 4.7 (Update OCR): a count row whose label was misread as a name (not a known person) is not staff.
+        if (fresh && identified == null) {
+          const days = []; for (const [, v] of employee.days) days.push(v);
+          if (PipeRosterReader.countRow(days)) {
+            book.employees.splice(book.employees.indexOf(employee), 1); for (const c of columns.values()) c.values.delete(employee.name);
+            for (let g = glyphs.length - 1; g >= 0; g--) if (glyphs[g].map === employee.days || glyphs[g].key === employee.name) glyphs.splice(g, 1);
+            AppLog.event('ocr.pipe.countRow', AppLog.data('page', page + 1, 'row', row, 'days', days.length)); continue;
+          }
+        }
         for (let i = 0; i < layout.open.length; i++) {
           const o = layout.open[i]; if (o.structured || inked[i]) continue;
           for (let column = o.start; column < o.end && !inked[i]; column++) { const cell = grid.cell(column, row); try { inked[i] = !GridVision.clearlyBlank(cell); } finally { cell.recycle(); } }
@@ -812,6 +821,12 @@ export class PipeRosterReader {
       if (fromReader != null) confirmed = PipeRules.anyReading(votes[1].all(), pipe);
       else {
         confirmed = PipeRules.unanimous(votes[1].all(), pipe);
+        // 4.7 (Update OCR): two agreeing reads ended the reading, so three never came; ask more single-cell views.
+        if (!confirmed && !misCut && !blank[1]) {
+          const readings = [...votes[1].all()], before = readings.length;
+          confirmed = await PipeRules.confirmByMoreReadings(readings, pipe, mode => this._readField(cells[1], mode));
+          for (const r of readings.slice(before)) votes[1].add(r); if (readings.length > before) raw += ' · đọc thêm: ' + readings.slice(before).join(' / ');
+        }
         if (!confirmed && (size === 3 || code === 'S10') && !blank[1]) try { const confirmingReader = await this._pipeReaderFor(); confirmed = confirmingReader != null && pipe === (await confirmingReader.read(cells[1])); } catch (unreadable) { confirmed = false; }
       }
       if (!confirmed) { raw += ' · ' + pipe + ' chưa có lần đọc thứ hai'; pipe = null; }
@@ -835,6 +850,19 @@ export class PipeRosterReader {
   }
   /** Retry only a settled D5 number whose shared field has not established a duty. The existing table must
    *  allow no duty; 12 is excluded because the same cell often prints 12TC2. */
+  /** 4.7 (Update OCR): a count row ("Tổng số 18h-06h+") whose label the name reader misread: no day has a shift
+   *  code, and at least three days — and half of the days with ink — read only bare counts (1–2 digits) in the shift
+   *  field. PipeDay raw: the shift field's readings come first, " / " between them, " | " before the next field. */
+  static countRow(days) {
+    let counted = 0, other = 0;
+    for (const d of days) {
+      if (d.code != null && d.code !== '') return false;
+      const readings = String(d.raw ?? '').split(' | ')[0].split(' / ').map(r => r.replace(/[^A-Za-z0-9]/g, '')).filter(r => r !== '');
+      if (readings.length === 0) continue;
+      if (readings.every(r => /^[0-9]{1,2}$/.test(r))) counted++; else other++;
+    }
+    return counted >= 3 && 2 * counted >= counted + other;
+  }
   static needsSharedDutyVerification(fields, code, blank, pipe, readings) {
     return fields === 2 && code === 'D5' && !blank && pipe != null && /^[0-9]+$/.test(pipe) && pipe !== '12'
       && PipeRules.defaultDuty(pipe) === '' && PipeRules.mergedVote(readings) == null && !PipeRules.bareNumbers(readings);

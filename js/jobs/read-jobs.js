@@ -22,7 +22,7 @@ import { OcrCheckpoint, sha256Hex, hashAvailable } from '../ocr/checkpoint.js';
 export const JOBS_DIR = 'read-jobs';
 export const PHOTOS_DIR = 'photos';
 /** Part of every job id: bump when a reader's result for the same photo and settings changes (new reader logic). */
-export const READER_REVISION = 1;
+export const READER_REVISION = 2; // 2: Update OCR (cells model with ink cut and HOC, S1x vote, pipe 19/21 third reading, count rows)
 export const SCHEMA = 1;
 /** Finished records (confirmed / discarded, without their result or files) kept per reader type. */
 export const KEEP_FINISHED = 3;

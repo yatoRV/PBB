@@ -26,13 +26,15 @@ async function load(context, dir) {
  *  The preprocessing is the training script's, step for step. Unavailable → null, as before. */
 export class CellReader {
   static H = H; static W = W;
-  constructor(session, labels, threshold) { this._session = session; this.labels = labels; this.threshold = threshold; }
+  /** inkCut (APK 4.7): wide cells are cut around their ink — the work-roster code model only ("cells"); the pipe-number
+   *  models were trained on the middle cut and keep it. */
+  constructor(session, labels, threshold, inkCut = false) { this._session = session; this.labels = labels; this.threshold = threshold; this.inkCut = inkCut; }
   /** open(context[, dir]) — dir: "cells" (work-roster shift codes) or "pipes" (pipe numbers of the pipe sheets,
    *  3.0 phase 3). Resolves to null when the model cannot be loaded. */
   static async open(context, dir = DIR) {
     try {
       let model = loaded.get(dir); if (model == null) { model = load(context, dir); loaded.set(dir, model); }
-      try { const m = await model; return new CellReader(m.session, m.labels, m.threshold); } catch (failed) { if (loaded.get(dir) === model) loaded.delete(dir); throw failed; }
+      try { const m = await model; return new CellReader(m.session, m.labels, m.threshold, dir === DIR); } catch (failed) { if (loaded.get(dir) === model) loaded.delete(dir); throw failed; }
     } catch (unavailable) { Log.w('CellReader', 'cell reader unavailable: ' + javaThrowableToString(unavailable)); return null; }
   }
   /** The cell's code ("" for OFF) when the model is sure enough, else null. */
@@ -42,18 +44,20 @@ export class CellReader {
   }
   /** Softmax over the labels, or null for a cell too small to read. */
   async probabilities(cell) {
-    const x = CellReader.prepare(cell); if (x == null) return null;
+    const x = CellReader.prepare(cell, this.inkCut); if (x == null) return null;
     const r = await run(this._session, { cell: { type: 'float32', data: x, dims: [1, 1, H, W] } });
     const logits = r[this._session.outputNames[0]].data; let max = -Infinity; for (const v of logits) max = Math.max(max, v);
     let sum = 0; for (const v of logits) sum += Math.exp(f(v - max)); const p = new Float32Array(logits.length); for (let i = 0; i < p.length; i++) p[i] = Math.exp(f(logits[i] - max)) / sum; return p;
   }
   /** Grey (R·30+G·59+B·11)/100, bilinear at pixel centres to 48×32, then (v − mean) / (std + 8). A cell more than
-   *  twice as wide as high (a photo of half the month: 15 wide day columns, 26/10) is first cut to its middle
-   *  1.6 heights, the shape of a full month's cell, so the code is not squeezed; same as train_cells.py. */
-  static prepare(cell) {
+   *  twice as wide as high (a photo of half the month: 15 wide day columns, 26/10) is first cut to 1.6 heights, the
+   *  shape of a full month's cell, so the code is not squeezed: APK 4.7 (Update OCR) around its ink (inkWindow; a
+   *  sheet printing the code at the cell's left edge lost its "P" in the middle cut), else its middle; same as
+   *  train_cells.py and CellReader.java. */
+  static prepare(cell, inkCut = false) {
     const w = cell.getWidth(), h = cell.getHeight(); if (w < 4 || h < 4) return null; const px = new Int32Array(w * h); cell.getPixels(px, 0, w, 0, 0, w, h);
     const g = new Float32Array(w * h); for (let i = 0; i < g.length; i++) { const c = px[i]; g[i] = (((c >> 16) & 255) * 30 + ((c >> 8) & 255) * 59 + (c & 255) * 11) / 100; }
-    let cw = w, left = 0; if (w > 2 * h) { cw = ((16 * h + 5) / 10) | 0; left = ((w - cw) / 2) | 0; }
+    let cw = w, left = 0; if (w > 2 * h) { cw = ((16 * h + 5) / 10) | 0; left = inkCut ? CellReader.inkWindow(px, w, h, cw) : ((w - cw) / 2) | 0; }
     const v = new Float32Array(H * W); let sum = 0;
     for (let y = 0; y < H; y++) {
       const sy = Math.max(0, Math.min(h - 1, f(f(f(f(y + f(.5)) * h) / H) - f(.5)))); const y0 = Math.floor(sy), y1 = Math.min(y0 + 1, h - 1); const fy = f(sy - y0);
@@ -66,6 +70,24 @@ export class CellReader {
     const mean = sum / v.length; let variance = 0; for (const val of v) variance += (val - mean) * (val - mean); const std = Math.sqrt(variance / v.length);
     for (let i = 0; i < v.length; i++) v[i] = (v[i] - mean) / (std + 8);
     return v;
+  }
+  /** APK 4.7 (Update OCR): where the cw-wide cut of a wide cell starts. Integer grey (R·30+G·59+B·11)/100; the
+   *  background is its median; ink is a pixel at least 40 darker; columns within max(2, w/25) of either side (rule
+   *  fragments) do not count. The cut holding the most ink, the one nearest the middle on a tie; the middle when the
+   *  cell has less ink than max(4, h/4) pixels. Same integers in train_cells.py and CellReader.java. */
+  static inkWindow(px, w, h, cw) {
+    const middle = ((w - cw) / 2) | 0; const gray = new Int32Array(w * h);
+    for (let i = 0; i < gray.length; i++) { const c = px[i]; gray[i] = ((((c >> 16) & 255) * 30 + ((c >> 8) & 255) * 59 + (c & 255) * 11) / 100) | 0; }
+    const sorted = Int32Array.from(gray).sort(); const limit = sorted[sorted.length >> 1] - 40; const inset = Math.max(2, (w / 25) | 0);
+    const ink = new Int32Array(w); let total = 0;
+    for (let x = inset; x < w - inset; x++) { let n = 0; for (let y = 0; y < h; y++) if (gray[y * w + x] <= limit) n++; ink[x] = n; total += n; }
+    if (total < Math.max(4, (h / 4) | 0)) return middle;
+    let best = middle, bestInk = -1;
+    for (let left = 0; left <= w - cw; left++) {
+      let n = 0; for (let x = left; x < left + cw; x++) n += ink[x];
+      if (n > bestInk || (n === bestInk && Math.abs(left - middle) < Math.abs(best - middle))) { bestInk = n; best = left; }
+    }
+    return best;
   }
   close() { /* the shared session stays loaded for the next reader (see the file header) */ }
 }

@@ -45,6 +45,17 @@ export class PipeRules {
     return n >= 3;
   }
   /** At least one OCR reading of the pipe cell gives this number. */
+  /** 4.7 (Update OCR): the reader stopped after two agreeing reads, so a clear 19 / 21 never had the three
+   *  readings unanimous asks for. Asks read(mode) for more single-cell readings (each added to `readings`) while none
+   *  disagrees, until unanimous holds; at most the six views of the field loop. The rule itself is unchanged. */
+  static async confirmByMoreReadings(readings, number, read) {
+    for (const mode of [-1, -2, -3, 0, 3, 1]) {
+      if (PipeRules.unanimous(readings, number)) return true;
+      if (readings.some(r => { const p = PipeRules._readingPipe(r); return p != null && p !== number; })) return false;
+      readings.push(await read(mode));
+    }
+    return PipeRules.unanimous(readings, number);
+  }
   static anyReading(readings, number) { for (const r of readings) if (number === PipeRules._readingPipe(r)) return true; return false; }
   /** The pipe number one reading gives ("19", "DS19", a T5 cell "19HC"), "" for a reading with no number, or null
    *  for an empty reading. */
